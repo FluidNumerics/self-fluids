@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Spectral Element Library in Fortran. Fortran classes for implementing spectral element methods on CPU and GPU hardware.">
+    <meta name="author" content="Fluid Numerics" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>SELF_advection_diffusion_1d.f90 &ndash; SELF</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SELF </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>SELF_advection_diffusion_1d.f90
+    <small>Source File</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+    <li><i class="fa fa-legal"></i> 3-Clause BSD with attribution</li> 
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.5% of total for source files.">63 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/SELF_advection_diffusion_1d.f90"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li class="active">SELF_advection_diffusion_1d.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/self_advection_diffusion_1d.html">self_advection_diffusion_1d</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/self_advection_diffusion_1d.f90.html#src">SELF_advection_diffusion_1d.f90</a>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">This file depends on</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefileself_advection_diffusion_1df90EfferentGraph" width="641pt" height="211pt"
+ viewBox="0.00 0.00 641.00 210.87" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph" class="graph" transform="scale(0.23 0.23) rotate(0) translate(4 897.03)">
+<title>sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-897.03 2735,-897.03 2735,4 -4,4"/>
+<!-- sourcefile~self_advection_diffusion_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~self_advection_diffusion_1d.f90</title>
+<polygon fill="none" stroke="black" points="2731,-553.24 2545,-553.24 2545,-529.24 2731,-529.24 2731,-553.24"/>
+<text text-anchor="middle" x="2638" y="-538.84" font-family="Helvetica,sans-Serif" font-size="10.50">SELF_advection_diffusion_1d.f90</text>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~self_dgmodel1d.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/self_dgmodel1d.f90.html" xlink:title="SELF_DGModel1D.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="2278,-208.24 2151,-208.24 2151,-184.24 2278,-184.24 2278,-208.24"/>
+<text text-anchor="middle" x="2214.5" y="-193.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_DGModel1D.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_advection_diffusion_1d.f90&#45;&gt;sourcefile~self_dgmodel1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~self_advection_diffusion_1d.f90&#45;&gt;sourcefile~self_dgmodel1d.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2635.31,-553.3C2625.98,-614.9 2574.99,-891.28 2412.5,-886.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2410.5,-886.24C2268.42,-881.82 2224.65,-336.13 2216.86,-218.44"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="2220.35,-218.18 2216.21,-208.42 2213.36,-218.62 2220.35,-218.18"/>
+</g>
+<!-- sourcefile~self_advection_diffusion_1d_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~self_advection_diffusion_1d_t.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/self_advection_diffusion_1d_t.f90.html" xlink:title="SELF_advection_diffusion_1d_t.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="2509,-208.24 2314,-208.24 2314,-184.24 2509,-184.24 2509,-208.24"/>
+<text text-anchor="middle" x="2411.5" y="-193.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_advection_diffusion_1d_t.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_advection_diffusion_1d.f90&#45;&gt;sourcefile~self_advection_diffusion_1d_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge3" class="edge">
+<title>sourcefile~self_advection_diffusion_1d.f90&#45;&gt;sourcefile~self_advection_diffusion_1d_t.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2629.01,-528.96C2595.73,-477.82 2467.92,-281.4 2425.94,-216.9"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="2428.78,-214.84 2420.39,-208.37 2422.91,-218.66 2428.78,-214.84"/>
+</g>
+<!-- sourcefile~self_gpu.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node4" class="node">
+<title>sourcefile~self_gpu.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node4"><a xlink:href=".././sourcefile/self_gpu.f90.html" xlink:title="SELF_GPU.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="443.5,-786.24 358.5,-786.24 358.5,-762.24 443.5,-762.24 443.5,-786.24"/>
+<text text-anchor="middle" x="401" y="-771.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_GPU.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_advection_diffusion_1d.f90&#45;&gt;sourcefile~self_gpu.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~self_advection_diffusion_1d.f90&#45;&gt;sourcefile~self_gpu.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2410.5,-886.24C2249.47,-881.23 2209.11,-886.24 2048,-886.24 2048,-886.24 2048,-886.24 1661.5,-886.24 1507.06,-886.24 1468,-874.59 1314,-886.24"/>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_gpu.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge11" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_gpu.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1472.5,-848.24C1400.67,-857.66 1386.32,-881.97 1314,-886.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1312,-886.24C975.55,-906.08 886.99,-881.14 557.5,-810.24"/>
+</g>
+<!-- sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node5" class="node">
+<title>sourcefile~self_hdf5.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node5"><a xlink:href=".././sourcefile/self_hdf5.f90.html" xlink:title="SELF_HDF5.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="274,-546.24 181,-546.24 181,-522.24 274,-522.24 274,-546.24"/>
+<text text-anchor="middle" x="227.5" y="-531.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_HDF5.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge4" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2194.61,-184.07C2164.84,-165.67 2104.59,-131.52 2048,-118.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2046,-118.24C1798.72,-60.19 1719.04,-49.55 1474.5,-118.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1472.5,-118.24C1422.88,-131.96 1418.32,-155.48 1369,-170.24 1280.69,-196.66 1255.17,-194.24 1163,-194.24 1163,-194.24 1163,-194.24 973,-194.24 846.11,-194.24 514.12,-131.82 402,-191.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M400,-191.24C338.37,-226.98 259.93,-442.68 235.85,-512.47"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="232.51,-511.42 232.59,-522.02 239.13,-513.69 232.51,-511.42"/>
+</g>
+<!-- sourcefile~self_model.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node6" class="node">
+<title>sourcefile~self_model.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node6"><a xlink:href=".././sourcefile/self_model.f90.html" xlink:title="SELF_Model.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1710.5,-130.24 1614.5,-130.24 1614.5,-106.24 1710.5,-106.24 1710.5,-130.24"/>
+<text text-anchor="middle" x="1662.5" y="-115.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Model.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_model.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge7" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_model.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2046,-118.24C1967.04,-100.68 1944.84,-121.16 1864,-118.24"/>
+</g>
+<!-- sourcefile~self_mappedscalar_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node7" class="node">
+<title>sourcefile~self_mappedscalar_1d.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node7"><a xlink:href=".././sourcefile/self_mappedscalar_1d.f90.html" xlink:title="SELF_MappedScalar_1D.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1943,-588.24 1783,-588.24 1783,-564.24 1943,-564.24 1943,-588.24"/>
+<text text-anchor="middle" x="1863" y="-573.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_MappedScalar_1D.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_mappedscalar_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge5" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_mappedscalar_1d.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2046,-576.24C2007.73,-601.19 1954.64,-597.96 1915.67,-590.42"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1916.09,-586.93 1905.58,-588.31 1914.66,-593.78 1916.09,-586.93"/>
+</g>
+<!-- sourcefile~self_mesh_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node8" class="node">
+<title>sourcefile~self_mesh_1d.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node8"><a xlink:href=".././sourcefile/self_mesh_1d.f90.html" xlink:title="SELF_Mesh_1D.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1369,-360.24 1257,-360.24 1257,-336.24 1369,-336.24 1369,-360.24"/>
+<text text-anchor="middle" x="1313" y="-345.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Mesh_1D.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_mesh_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge6" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_mesh_1d.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2212.72,-208.44C2208.47,-263.29 2183.02,-488.2 2048,-576.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2046,-576.24C2030.91,-586.07 1517.82,-416.21 1359.83,-363.55"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1360.54,-360.1 1349.95,-360.26 1358.33,-366.74 1360.54,-360.1"/>
+</g>
+<!-- sourcefile~self_supportroutines.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node11" class="node">
+<title>sourcefile~self_supportroutines.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node11"><a xlink:href=".././sourcefile/self_supportroutines.f90.html" xlink:title="SELF_SupportRoutines.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="303,-319.24 152,-319.24 152,-295.24 303,-295.24 303,-319.24"/>
+<text text-anchor="middle" x="227.5" y="-304.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_SupportRoutines.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_supportroutines.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge8" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_supportroutines.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2204,-184.05C2187.88,-164.22 2153.19,-125.12 2115,-104.24 2013.99,-48.99 1979.12,-40.24 1864,-40.24 1864,-40.24 1864,-40.24 1661.5,-40.24 1439.94,-40.24 1384.56,-38.24 1163,-38.24 1163,-38.24 1163,-38.24 746.5,-38.24 633.1,-38.24 600.95,-50.58 499,-100.24 480.78,-109.11 480.61,-118.2 463,-128.24 437.69,-142.66 427.13,-137.49 402,-152.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M400,-152.24C374.18,-166.09 361.52,-158.49 339,-177.24 316.26,-196.17 321.61,-210.23 303,-233.24 286.7,-253.39 265.52,-273.99 249.91,-288.32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="247.37,-285.9 242.31,-295.21 252.07,-291.09 247.37,-285.9"/>
+</g>
+<!-- sourcefile~self_metadata.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node12" class="node">
+<title>sourcefile~self_metadata.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node12"><a xlink:href=".././sourcefile/self_metadata.f90.html" xlink:title="SELF_Metadata.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="613.5,-243.24 499.5,-243.24 499.5,-219.24 613.5,-219.24 613.5,-243.24"/>
+<text text-anchor="middle" x="556.5" y="-228.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Metadata.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_metadata.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge9" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_metadata.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2046,-118.24C2046,-118.24 1474.5,-196.24 1474.5,-196.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M746.5,-232.24C706.08,-228.28 660.56,-227.92 624.32,-228.6"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="623.8,-225.11 613.88,-228.83 623.95,-232.11 623.8,-225.11"/>
+</g>
+<!-- sourcefile~self_dgmodel1d_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node13" class="node">
+<title>sourcefile~self_dgmodel1d_t.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node13"><a xlink:href=".././sourcefile/self_dgmodel1d_t.f90.html" xlink:title="SELF_DGModel1D_t.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="2115,-208.24 1979,-208.24 1979,-184.24 2115,-184.24 2115,-208.24"/>
+<text text-anchor="middle" x="2047" y="-193.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_DGModel1D_t.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_dgmodel1d_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge10" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_dgmodel1d_t.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2150.93,-196.24C2142.51,-196.24 2133.79,-196.24 2125.16,-196.24"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="2125.08,-192.74 2115.08,-196.24 2125.08,-199.74 2125.08,-192.74"/>
+</g>
+<!-- sourcefile~self_gpuinterfaces.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node14" class="node">
+<title>sourcefile~self_gpuinterfaces.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node14"><a xlink:href=".././sourcefile/self_gpuinterfaces.f90.html" xlink:title="SELF_GPUInterfaces.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1043.5,-782.24 904.5,-782.24 904.5,-758.24 1043.5,-758.24 1043.5,-782.24"/>
+<text text-anchor="middle" x="974" y="-767.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_GPUInterfaces.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_gpuinterfaces.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge12" class="edge">
+<title>sourcefile~self_dgmodel1d.f90&#45;&gt;sourcefile~self_gpuinterfaces.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M2046,-576.24C1809.12,-727.96 1755.79,-850.72 1474.5,-848.24"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1472.5,-848.24C1308.65,-852.32 1117.98,-808.6 1027.64,-784.89"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1028.47,-781.49 1017.91,-782.31 1026.68,-788.26 1028.47,-781.49"/>
+</g>
+<!-- sourcefile~self_advection_diffusion_1d_t.f90&#45;&gt;sourcefile~self_dgmodel1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge14" class="edge">
+<title>sourcefile~self_advection_diffusion_1d_t.f90&#45;&gt;sourcefile~self_dgmodel1d.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M2313.86,-196.24C2305.21,-196.24 2296.55,-196.24 2288.16,-196.24"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="2288.07,-192.74 2278.07,-196.24 2288.07,-199.74 2288.07,-192.74"/>
+</g>
+<!-- sourcefile~self_advection_diffusion_1d_t.f90&#45;&gt;sourcefile~self_model.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge13" class="edge">
+<title>sourcefile~self_advection_diffusion_1d_t.f90&#45;&gt;sourcefile~self_model.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M2213.5,-80.24C2068.42,-22.21 2020.15,-123.89 1864,-118.24"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M1862,-118.24C1814.48,-116.39 1760.52,-116.53 1720.86,-117.06"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="1720.79,-113.56 1710.85,-117.2 1720.9,-120.56 1720.79,-113.56"/>
+</g>
+<!-- sourcefile~self_mesh.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node9" class="node">
+<title>sourcefile~self_mesh.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node9"><a xlink:href=".././sourcefile/self_mesh.f90.html" xlink:title="SELF_Mesh.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1207.5,-109.24 1116.5,-109.24 1116.5,-85.24 1207.5,-85.24 1207.5,-109.24"/>
+<text text-anchor="middle" x="1162" y="-94.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Mesh.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_advection_diffusion_1d_t.f90&#45;&gt;sourcefile~self_mesh.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge15" class="edge">
+<title>sourcefile~self_advection_diffusion_1d_t.f90&#45;&gt;sourcefile~self_mesh.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M2394.23,-184.06C2361.91,-160.45 2286.57,-108.31 2215.5,-80.24"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M2213.5,-80.24C2167.07,-61.89 2162.72,-40.91 2115,-26.24 2007.89,6.71 1976.06,-2.24 1864,-2.24 1864,-2.24 1864,-2.24 1661.5,-2.24 1492.68,-2.24 1297.3,-55.46 1209.7,-82.23"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="1208.58,-78.91 1200.06,-85.2 1210.65,-85.6 1208.58,-78.91"/>
+</g>
+<!-- sourcefile~self_gpu_enums.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node10" class="node">
+<title>sourcefile~self_gpu_enums.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node10"><a xlink:href=".././sourcefile/self_gpu_enums.f90.html" xlink:title="SELF_GPU_enums.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="291,-746.24 164,-746.24 164,-722.24 291,-722.24 291,-746.24"/>
+<text text-anchor="middle" x="227.5" y="-731.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_GPU_enums.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_gpu.f90&#45;&gt;sourcefile~self_gpu_enums.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge16" class="edge">
+<title>sourcefile~self_gpu.f90&#45;&gt;sourcefile~self_gpu_enums.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M358.48,-764.55C337.93,-759.76 312.71,-753.88 289.97,-748.57"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="290.6,-745.13 280.06,-746.26 289.01,-751.94 290.6,-745.13"/>
+</g>
+<!-- sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node15" class="node">
+<title>sourcefile~self_constants.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node15"><a xlink:href=".././sourcefile/self_constants.f90.html" xlink:title="SELF_Constants.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="116,-546.24 0,-546.24 0,-522.24 116,-522.24 116,-546.24"/>
+<text text-anchor="middle" x="58" y="-531.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Constants.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_hdf5.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge17" class="edge">
+<title>sourcefile~self_hdf5.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M180.73,-534.24C163.89,-534.24 144.46,-534.24 126.13,-534.24"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="126.09,-530.74 116.09,-534.24 126.09,-537.74 126.09,-530.74"/>
+</g>
+<!-- sourcefile~self_model.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge20" class="edge">
+<title>sourcefile~self_model.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#ff9900" stroke-dasharray="5,2" d="M1614.43,-111.3C1576.03,-107.27 1520.76,-105.24 1474.5,-118.24"/>
+</g>
+<!-- sourcefile~self_model.f90&#45;&gt;sourcefile~self_supportroutines.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge18" class="edge">
+<title>sourcefile~self_model.f90&#45;&gt;sourcefile~self_supportroutines.f90</title>
+<path fill="none" stroke="#ff9900" stroke-dasharray="5,2" d="M1614.22,-111.41C1592.3,-108.58 1565.88,-105.63 1542,-104.24 1481.21,-100.69 1463.85,-88.61 1405,-104.24 1359.98,-116.19 1360.27,-150.83 1314,-156.24"/>
+<path fill="none" stroke="#ff9900" stroke-dasharray="5,2" d="M1312,-156.24C1261.63,-160.52 445.82,-127.03 402,-152.24"/>
+</g>
+<!-- sourcefile~self_model.f90&#45;&gt;sourcefile~self_metadata.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge19" class="edge">
+<title>sourcefile~self_model.f90&#45;&gt;sourcefile~self_metadata.f90</title>
+<path fill="none" stroke="#ff9900" stroke-dasharray="5,2" d="M1639.91,-130.34C1605.95,-148.65 1537.43,-182.69 1474.5,-196.24"/>
+<path fill="none" stroke="#ff9900" stroke-dasharray="5,2" d="M1472.5,-196.24C1256.94,-242.65 1046.48,-257.84 748.5,-232.24"/>
+</g>
+<!-- sourcefile~self_mappedscalar_1d.f90&#45;&gt;sourcefile~self_gpu.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge22" class="edge">
+<title>sourcefile~self_mappedscalar_1d.f90&#45;&gt;sourcefile~self_gpu.f90</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M1820.13,-588.26C1759.06,-605.73 1641.95,-639.03 1542,-666.24 1331.36,-723.57 1282.56,-756.79 1067,-791.24 926.97,-813.61 889.38,-794.07 748.5,-810.24"/>
+</g>
+<!-- sourcefile~self_mappedscalar_1d_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node16" class="node">
+<title>sourcefile~self_mappedscalar_1d_t.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node16"><a xlink:href=".././sourcefile/self_mappedscalar_1d_t.f90.html" xlink:title="SELF_MappedScalar_1D_t.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1747,-588.24 1578,-588.24 1578,-564.24 1747,-564.24 1747,-588.24"/>
+<text text-anchor="middle" x="1662.5" y="-573.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_MappedScalar_1D_t.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_mappedscalar_1d.f90&#45;&gt;sourcefile~self_mappedscalar_1d_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge21" class="edge">
+<title>sourcefile~self_mappedscalar_1d.f90&#45;&gt;sourcefile~self_mappedscalar_1d_t.f90</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M1782.98,-576.24C1774.51,-576.24 1765.83,-576.24 1757.21,-576.24"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="1757.13,-572.74 1747.13,-576.24 1757.13,-579.74 1757.13,-572.74"/>
+</g>
+<!-- sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge25" class="edge">
+<title>sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M973,-422.24C826.96,-415.85 787.27,-433.99 650,-484.24 605.71,-500.45 604.17,-529.42 557.5,-536.24"/>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M555.5,-536.24C487.65,-543.35 470.07,-540.77 402,-536.24"/>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M400,-536.24C361.36,-533.66 317.72,-533.19 284.13,-533.34"/>
+<polygon fill="#33ff00" stroke="#33ff00" points="284.03,-529.84 274.05,-533.41 284.07,-536.84 284.03,-529.84"/>
+</g>
+<!-- sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_mesh.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge26" class="edge">
+<title>sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_mesh.f90</title>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M1304.81,-336.13C1281.17,-296.3 1205.58,-168.96 1175.51,-118.31"/>
+<polygon fill="#33ff00" stroke="#33ff00" points="1178.4,-116.33 1170.29,-109.52 1172.38,-119.9 1178.4,-116.33"/>
+</g>
+<!-- sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_supportroutines.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge29" class="edge">
+<title>sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_supportroutines.f90</title>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M1296.11,-360.38C1269.99,-379.59 1215.61,-416.41 1163,-432.24"/>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M1161,-432.24C1081.73,-456.09 1057.6,-427.81 975,-422.24"/>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M973,-422.24C903.61,-417.56 910.87,-354.55 845,-332.24 663.43,-270.72 434.42,-283 313.05,-295.95"/>
+<polygon fill="#33ff00" stroke="#33ff00" points="312.63,-292.48 303.07,-297.05 313.39,-299.44 312.63,-292.48"/>
+</g>
+<!-- sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge23" class="edge">
+<title>sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M973,-422.24C829.49,-418.58 792.97,-409.28 650,-422.24 425.92,-442.54 372.45,-468.23 152,-513.24 141.8,-515.32 131,-517.65 120.5,-519.97"/>
+<polygon fill="#33ff00" stroke="#33ff00" points="119.56,-516.6 110.57,-522.19 121.09,-523.43 119.56,-516.6"/>
+</g>
+<!-- sourcefile~self_lagrange.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node17" class="node">
+<title>sourcefile~self_lagrange.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node17"><a xlink:href=".././sourcefile/self_lagrange.f90.html" xlink:title="SELF_Lagrange.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-626.24 499,-626.24 499,-602.24 614,-602.24 614,-626.24"/>
+<text text-anchor="middle" x="556.5" y="-611.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Lagrange.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_lagrange.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge24" class="edge">
+<title>sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_lagrange.f90</title>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M1161,-432.24C939.84,-507.44 856.21,-445.49 650,-555.24 630.84,-565.43 632.08,-576.22 614,-588.24 608.93,-591.61 603.35,-594.75 597.74,-597.61"/>
+<polygon fill="#33ff00" stroke="#33ff00" points="595.83,-594.65 588.34,-602.14 598.87,-600.95 595.83,-594.65"/>
+</g>
+<!-- sourcefile~self_scalar_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node19" class="node">
+<title>sourcefile~self_scalar_1d.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node19"><a xlink:href=".././sourcefile/self_scalar_1d.f90.html" xlink:title="SELF_Scalar_1D.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1221,-702.24 1103,-702.24 1103,-678.24 1221,-678.24 1221,-702.24"/>
+<text text-anchor="middle" x="1162" y="-687.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Scalar_1D.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_scalar_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge27" class="edge">
+<title>sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_scalar_1d.f90</title>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M1308.78,-360.48C1293.84,-417.2 1231.53,-652.11 1221,-664.24 1218.19,-667.47 1214.9,-670.32 1211.34,-672.83"/>
+<polygon fill="#33ff00" stroke="#33ff00" points="1209.39,-669.92 1202.64,-678.09 1213.01,-675.91 1209.39,-669.92"/>
+</g>
+<!-- sourcefile~self_data.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node20" class="node">
+<title>sourcefile~self_data.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node20"><a xlink:href=".././sourcefile/self_data.f90.html" xlink:title="SELF_Data.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="792,-588.24 703,-588.24 703,-564.24 792,-564.24 792,-588.24"/>
+<text text-anchor="middle" x="747.5" y="-573.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Data.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_data.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge28" class="edge">
+<title>sourcefile~self_mesh_1d.f90&#45;&gt;sourcefile~self_data.f90</title>
+<path fill="none" stroke="#33ff00" stroke-dasharray="5,2" d="M973,-422.24C879.03,-415.9 795.33,-512.74 762.84,-555.97"/>
+<polygon fill="#33ff00" stroke="#33ff00" points="759.98,-553.96 756.87,-564.09 765.62,-558.11 759.98,-553.96"/>
+</g>
+<!-- sourcefile~self_mesh.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge30" class="edge">
+<title>sourcefile~self_mesh.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M1116.06,-96.09C1100.52,-95.74 1083,-95.41 1067,-95.24 814.56,-92.55 750.47,-77.99 499,-100.24 455.61,-104.07 445.48,-111.59 402,-114.24"/>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M400,-114.24C301.22,-117.09 175.18,-254.44 152,-286.24 98.81,-359.18 72.51,-466.09 63.14,-511.97"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="59.65,-511.54 61.16,-522.03 66.52,-512.89 59.65,-511.54"/>
+</g>
+<!-- sourcefile~self_domaindecomposition.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node18" class="node">
+<title>sourcefile~self_domaindecomposition.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node18"><a xlink:href=".././sourcefile/self_domaindecomposition.f90.html" xlink:title="SELF_DomainDecomposition.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1067,-128.24 881,-128.24 881,-104.24 1067,-104.24 1067,-128.24"/>
+<text text-anchor="middle" x="974" y="-113.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_DomainDecomposition.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_mesh.f90&#45;&gt;sourcefile~self_domaindecomposition.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge31" class="edge">
+<title>sourcefile~self_mesh.f90&#45;&gt;sourcefile~self_domaindecomposition.f90</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M1116.45,-101.79C1104.43,-103.02 1090.91,-104.4 1077.12,-105.81"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="1076.64,-102.34 1067.05,-106.83 1077.35,-109.3 1076.64,-102.34"/>
+</g>
+<!-- sourcefile~self_supportroutines.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge32" class="edge">
+<title>sourcefile~self_supportroutines.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M174.22,-319.4C166.15,-322.92 158.39,-327.44 152,-333.24 97.36,-382.79 72.38,-470.96 63.3,-512.04"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="59.87,-511.35 61.23,-521.86 66.72,-512.79 59.87,-511.35"/>
+</g>
+<!-- sourcefile~self_metadata.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge33" class="edge">
+<title>sourcefile~self_metadata.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#3200ff" stroke-dasharray="5,2" d="M527.46,-219.16C489.41,-203.58 423.66,-179.76 402,-191.24"/>
+</g>
+<!-- sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge34" class="edge">
+<title>sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M973,-308.24C683.35,-278.67 353.66,-459.11 256.7,-516.88"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="254.82,-513.92 248.05,-522.07 258.42,-519.92 254.82,-513.92"/>
+</g>
+<!-- sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_model.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge37" class="edge">
+<title>sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_model.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M2029.45,-184.16C1998.63,-162.86 1929.62,-120.61 1864,-118.24"/>
+</g>
+<!-- sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_mappedscalar_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge35" class="edge">
+<title>sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_mappedscalar_1d.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M2040.15,-208.45C2014.05,-262.94 1908.07,-484.23 1874.35,-554.62"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="1871.08,-553.35 1869.92,-563.88 1877.4,-556.37 1871.08,-553.35"/>
+</g>
+<!-- sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_mesh_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge36" class="edge">
+<title>sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_mesh_1d.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M1472.5,-348.24C1442.41,-354.63 1408.39,-355.44 1379.59,-354.32"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="1379.39,-350.81 1369.24,-353.83 1379.06,-357.8 1379.39,-350.81"/>
+</g>
+<!-- sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_supportroutines.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge38" class="edge">
+<title>sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_supportroutines.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M1978.71,-204.93C1944.44,-208.93 1902.07,-213.23 1864,-215.24"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M1862,-215.24C1617.38,-228.14 1558.21,-137.09 1314,-156.24"/>
+</g>
+<!-- sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_metadata.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge39" class="edge">
+<title>sourcefile~self_dgmodel1d_t.f90&#45;&gt;sourcefile~self_metadata.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M1862,-215.24C1679.92,-216 1652.61,-310.39 1474.5,-348.24"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M1472.5,-348.24C1425.94,-354.18 1415.58,-333.05 1369,-327.24 1195.04,-305.52 1149.71,-322.79 975,-308.24"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M973,-308.24C868.2,-297.54 853.34,-242.49 748.5,-232.24"/>
+</g>
+<!-- sourcefile~self_gpuinterfaces.f90&#45;&gt;sourcefile~self_gpu.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge40" class="edge">
+<title>sourcefile~self_gpuinterfaces.f90&#45;&gt;sourcefile~self_gpu.f90</title>
+<path fill="none" stroke="#ff0098" stroke-dasharray="5,2" d="M916.54,-782.3C871.31,-791.48 806.12,-803.63 748.5,-810.24"/>
+</g>
+<!-- sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge44" class="edge">
+<title>sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1472.5,-536.24C1344.21,-486.6 1300.56,-536.24 1163,-536.24 1163,-536.24 1163,-536.24 973,-536.24 788.33,-536.24 741.16,-516.98 557.5,-536.24"/>
+</g>
+<!-- sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_mesh_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge43" class="edge">
+<title>sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_mesh_1d.f90</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1594.46,-564.21C1550.07,-555.8 1496.17,-544.62 1474.5,-536.24"/>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1472.5,-536.24C1442.81,-524.75 1429.29,-532.82 1405,-512.24 1359.07,-473.32 1332.02,-405.08 1320.53,-370.17"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="1323.82,-368.95 1317.47,-360.47 1317.15,-371.06 1323.82,-368.95"/>
+</g>
+<!-- sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge41" class="edge">
+<title>sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1650.09,-588.28C1598.91,-640.92 1383.35,-848.24 1163,-848.24 1163,-848.24 1163,-848.24 746.5,-848.24 515.03,-848.24 436.14,-896.52 228.5,-794.24"/>
+</g>
+<!-- sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_lagrange.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge42" class="edge">
+<title>sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_lagrange.f90</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1640.54,-588.36C1606.87,-606.97 1538.09,-641.57 1474.5,-652.24"/>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1472.5,-652.24C1426.6,-659.94 1415.41,-639.8 1369,-636.24 1319.37,-632.42 1306.64,-632.56 1257,-636.24 1214.88,-639.36 1205.21,-651.8 1163,-650.24"/>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1161,-650.24C1118.5,-647.05 1109.33,-636.19 1067,-631.24 909.08,-612.77 721.91,-611.85 624.3,-612.94"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="624.23,-609.44 614.28,-613.07 624.32,-616.44 624.23,-609.44"/>
+</g>
+<!-- sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_scalar_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge45" class="edge">
+<title>sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_scalar_1d.f90</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1472.5,-652.24C1390.21,-667.63 1294.4,-678.29 1231.43,-684.32"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="1230.86,-680.86 1221.23,-685.29 1231.52,-687.83 1230.86,-680.86"/>
+</g>
+<!-- sourcefile~self_geometry_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node24" class="node">
+<title>sourcefile~self_geometry_1d.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node24"><a xlink:href=".././sourcefile/self_geometry_1d.f90.html" xlink:title="SELF_Geometry_1D.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1542,-588.24 1405,-588.24 1405,-564.24 1542,-564.24 1542,-588.24"/>
+<text text-anchor="middle" x="1473.5" y="-573.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Geometry_1D.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_geometry_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge46" class="edge">
+<title>sourcefile~self_mappedscalar_1d_t.f90&#45;&gt;sourcefile~self_geometry_1d.f90</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M1577.85,-576.24C1569.34,-576.24 1560.73,-576.24 1552.29,-576.24"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="1552.1,-572.74 1542.1,-576.24 1552.1,-579.74 1552.1,-572.74"/>
+</g>
+<!-- sourcefile~self_lagrange.f90&#45;&gt;sourcefile~self_gpu.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge49" class="edge">
+<title>sourcefile~self_lagrange.f90&#45;&gt;sourcefile~self_gpu.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M519.36,-626.33C512.01,-629.97 504.77,-634.56 499,-640.24 472.64,-666.17 484.63,-685.25 463,-715.24 452.18,-730.23 437.31,-744.71 424.96,-755.57"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="422.59,-752.99 417.27,-762.15 427.15,-758.3 422.59,-752.99"/>
+</g>
+<!-- sourcefile~self_lagrange.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge47" class="edge">
+<title>sourcefile~self_lagrange.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M523.74,-626.29C493.1,-637 445.14,-651.4 402,-654.24"/>
+</g>
+<!-- sourcefile~self_lagrange_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node23" class="node">
+<title>sourcefile~self_lagrange_t.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node23"><a xlink:href=".././sourcefile/self_lagrange_t.f90.html" xlink:title="SELF_Lagrange_t.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="463,-588.24 339,-588.24 339,-564.24 463,-564.24 463,-588.24"/>
+<text text-anchor="middle" x="401" y="-573.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Lagrange_t.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_lagrange.f90&#45;&gt;sourcefile~self_lagrange_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge48" class="edge">
+<title>sourcefile~self_lagrange.f90&#45;&gt;sourcefile~self_lagrange_t.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M506.93,-602.21C492.16,-598.56 475.77,-594.5 460.42,-590.7"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="461.06,-587.25 450.52,-588.25 459.38,-594.05 461.06,-587.25"/>
+</g>
+<!-- sourcefile~self_domaindecomposition_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node22" class="node">
+<title>sourcefile~self_domaindecomposition_t.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node22"><a xlink:href=".././sourcefile/self_domaindecomposition_t.f90.html" xlink:title="SELF_DomainDecomposition_t.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="845,-128.24 650,-128.24 650,-104.24 845,-104.24 845,-128.24"/>
+<text text-anchor="middle" x="747.5" y="-113.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_DomainDecomposition_t.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_domaindecomposition.f90&#45;&gt;sourcefile~self_domaindecomposition_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge50" class="edge">
+<title>sourcefile~self_domaindecomposition.f90&#45;&gt;sourcefile~self_domaindecomposition_t.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M880.72,-116.24C872.38,-116.24 863.88,-116.24 855.43,-116.24"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="855.16,-112.74 845.16,-116.24 855.16,-119.74 855.16,-112.74"/>
+</g>
+<!-- sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_gpu.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge55" class="edge">
+<title>sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_gpu.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M973,-692.24C861.27,-707.15 860.49,-797.39 748.5,-810.24"/>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M746.5,-810.24C663.05,-819.81 639.62,-827.91 557.5,-810.24"/>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M555.5,-810.24C521.36,-802.89 483.13,-793.93 453.36,-786.78"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="454.14,-783.37 443.6,-784.43 452.51,-790.17 454.14,-783.37"/>
+</g>
+<!-- sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_gpuinterfaces.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge54" class="edge">
+<title>sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_gpuinterfaces.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M1132.75,-702.39C1100.61,-716.21 1047.98,-738.85 1012.45,-754.13"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="1010.71,-751.07 1002.91,-758.23 1013.48,-757.5 1010.71,-751.07"/>
+</g>
+<!-- sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge51" class="edge">
+<title>sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M1102.93,-687.24C1066.11,-686.23 1017.57,-686.55 975,-692.24"/>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M973,-692.24C789.96,-716.68 741.86,-702.87 557.5,-692.24"/>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M555.5,-692.24C485.48,-686.17 472.13,-649.63 402,-654.24"/>
+</g>
+<!-- sourcefile~self_gpublas.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node21" class="node">
+<title>sourcefile~self_gpublas.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node21"><a xlink:href=".././sourcefile/self_gpublas.f90.html" xlink:title="SELF_GPUBLAS.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="457.5,-706.24 344.5,-706.24 344.5,-682.24 457.5,-682.24 457.5,-706.24"/>
+<text text-anchor="middle" x="401" y="-691.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_GPUBLAS.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_gpublas.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge52" class="edge">
+<title>sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_gpublas.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M555.5,-692.24C526.83,-690.58 495.11,-690.68 467.98,-691.34"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="467.72,-687.84 457.82,-691.62 467.91,-694.84 467.72,-687.84"/>
+</g>
+<!-- sourcefile~self_scalar_1d_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node25" class="node">
+<title>sourcefile~self_scalar_1d_t.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node25"><a xlink:href=".././sourcefile/self_scalar_1d_t.f90.html" xlink:title="SELF_Scalar_1D_t.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1037.5,-664.24 910.5,-664.24 910.5,-640.24 1037.5,-640.24 1037.5,-664.24"/>
+<text text-anchor="middle" x="974" y="-649.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Scalar_1D_t.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_scalar_1d_t.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge53" class="edge">
+<title>sourcefile~self_scalar_1d.f90&#45;&gt;sourcefile~self_scalar_1d_t.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M1102.91,-678.37C1084.22,-674.55 1063.31,-670.28 1043.91,-666.32"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="1044.42,-662.85 1033.93,-664.28 1043.02,-669.71 1044.42,-662.85"/>
+</g>
+<!-- sourcefile~self_data.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge59" class="edge">
+<title>sourcefile~self_data.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M702.91,-573.99C664.58,-572.44 607.28,-571.15 557.5,-574.24"/>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M555.5,-574.24C485.35,-578.58 472.13,-540.91 402,-536.24"/>
+</g>
+<!-- sourcefile~self_data.f90&#45;&gt;sourcefile~self_metadata.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge57" class="edge">
+<title>sourcefile~self_data.f90&#45;&gt;sourcefile~self_metadata.f90</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M739.77,-563.96C711.81,-512.92 604.6,-317.21 569.04,-252.29"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="572.02,-250.46 564.15,-243.37 565.88,-253.82 572.02,-250.46"/>
+</g>
+<!-- sourcefile~self_data.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge56" class="edge">
+<title>sourcefile~self_data.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M555.5,-574.24C529.06,-575.87 522.94,-581.88 499,-593.24 452.99,-615.06 452.82,-650.9 402,-654.24"/>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M400,-654.24C323.94,-659.23 301.93,-674.68 228.5,-654.24"/>
+</g>
+<!-- sourcefile~self_data.f90&#45;&gt;sourcefile~self_lagrange.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge58" class="edge">
+<title>sourcefile~self_data.f90&#45;&gt;sourcefile~self_lagrange.f90</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M702.66,-585.05C679.26,-589.75 649.98,-595.64 623.85,-600.9"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="623.13,-597.47 614.01,-602.87 624.51,-604.33 623.13,-597.47"/>
+</g>
+<!-- sourcefile~self_gpublas.f90&#45;&gt;sourcefile~self_gpu_enums.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge60" class="edge">
+<title>sourcefile~self_gpublas.f90&#45;&gt;sourcefile~self_gpu_enums.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M348.54,-706.24C330.14,-710.53 309.22,-715.41 290.06,-719.88"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="289.16,-716.49 280.22,-722.17 290.75,-723.31 289.16,-716.49"/>
+</g>
+<!-- sourcefile~self_gpublas.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge61" class="edge">
+<title>sourcefile~self_gpublas.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M344.47,-682.54C310.75,-675.13 266.94,-664.94 228.5,-654.24"/>
+</g>
+<!-- sourcefile~self_domaindecomposition_t.f90&#45;&gt;sourcefile~self_supportroutines.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge64" class="edge">
+<title>sourcefile~self_domaindecomposition_t.f90&#45;&gt;sourcefile~self_supportroutines.f90</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M555.5,-114.24C520.41,-116.19 432.46,-134.71 402,-152.24"/>
+</g>
+<!-- sourcefile~self_domaindecomposition_t.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge62" class="edge">
+<title>sourcefile~self_domaindecomposition_t.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M649.81,-112.76C620.17,-112.35 587.48,-112.57 557.5,-114.24"/>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M555.5,-114.24C487.38,-118.02 470.1,-110.09 402,-114.24"/>
+</g>
+<!-- sourcefile~self_domaindecomposition_t.f90&#45;&gt;sourcefile~self_lagrange.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge63" class="edge">
+<title>sourcefile~self_domaindecomposition_t.f90&#45;&gt;sourcefile~self_lagrange.f90</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M743.41,-128.33C725,-200.27 629.96,-569.54 614,-588.24 611.24,-591.47 607.99,-594.32 604.47,-596.84"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="602.57,-593.9 595.87,-602.11 606.22,-599.87 602.57,-593.9"/>
+</g>
+<!-- sourcefile~self_lagrange_t.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge67" class="edge">
+<title>sourcefile~self_lagrange_t.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M350.85,-564.2C330.01,-559.1 305.6,-553.12 284.1,-547.85"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="284.67,-544.39 274.12,-545.41 283,-551.19 284.67,-544.39"/>
+</g>
+<!-- sourcefile~self_lagrange_t.f90&#45;&gt;sourcefile~self_supportroutines.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge68" class="edge">
+<title>sourcefile~self_lagrange_t.f90&#45;&gt;sourcefile~self_supportroutines.f90</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M392.19,-563.98C365.17,-521.61 275.54,-381.02 241.64,-327.85"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="244.49,-325.81 236.16,-319.26 238.59,-329.57 244.49,-325.81"/>
+</g>
+<!-- sourcefile~self_lagrange_t.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge65" class="edge">
+<title>sourcefile~self_lagrange_t.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M388.02,-588.32C360.75,-614.31 291.52,-671.79 228.5,-654.24"/>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M226.5,-654.24C163.82,-636.78 105.65,-583.55 77.22,-554.19"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="79.44,-551.44 70.01,-546.59 74.36,-556.26 79.44,-551.44"/>
+</g>
+<!-- sourcefile~self_quadrature.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node26" class="node">
+<title>sourcefile~self_quadrature.f90</title>
+<g id="a_sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_node26"><a xlink:href=".././sourcefile/self_quadrature.f90.html" xlink:title="SELF_Quadrature.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="289.5,-588.24 165.5,-588.24 165.5,-564.24 289.5,-564.24 289.5,-588.24"/>
+<text text-anchor="middle" x="227.5" y="-573.84" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Quadrature.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~self_lagrange_t.f90&#45;&gt;sourcefile~self_quadrature.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge66" class="edge">
+<title>sourcefile~self_lagrange_t.f90&#45;&gt;sourcefile~self_quadrature.f90</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M338.57,-576.24C325.98,-576.24 312.63,-576.24 299.73,-576.24"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="299.5,-572.74 289.5,-576.24 299.5,-579.74 299.5,-572.74"/>
+</g>
+<!-- sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_mesh_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge71" class="edge">
+<title>sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_mesh_1d.f90</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M1426.45,-564.1C1418.65,-560.55 1411.11,-556.02 1405,-550.24 1351.39,-499.53 1327.02,-411.37 1318.18,-370.38"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="1321.61,-369.67 1316.17,-360.58 1314.75,-371.08 1321.61,-369.67"/>
+</g>
+<!-- sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_supportroutines.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge74" class="edge">
+<title>sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_supportroutines.f90</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M1404.63,-579.8C1376.43,-580.13 1343.47,-579.04 1314,-574.24"/>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M1312,-574.24C1185.91,-553.68 876.26,-460.24 748.5,-460.24 748.5,-460.24 748.5,-460.24 555.5,-460.24 429.89,-460.24 300.55,-366.47 250.29,-325.75"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="252.33,-322.89 242.38,-319.24 247.88,-328.3 252.33,-322.89"/>
+</g>
+<!-- sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge69" class="edge">
+<title>sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M1312,-650.24C1266.19,-666.73 1267.23,-695.96 1221,-711.24 1034.68,-772.79 531.25,-713.98 339,-753.24 287.68,-763.72 275.91,-816.51 228.5,-794.24"/>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M226.5,-794.24C192.97,-777.72 177.3,-782.75 152,-755.24 97.31,-695.76 72.09,-599.42 63.09,-556.32"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="66.49,-555.45 61.1,-546.33 59.62,-556.82 66.49,-555.45"/>
+</g>
+<!-- sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_lagrange.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge70" class="edge">
+<title>sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_lagrange.f90</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M1449.96,-588.37C1419.71,-604.27 1364,-632.24 1314,-650.24"/>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M1312,-650.24C1249.69,-672.66 1229.18,-652.7 1163,-650.24"/>
+</g>
+<!-- sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_scalar_1d.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge72" class="edge">
+<title>sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_scalar_1d.f90</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M1312,-650.24C1284.4,-660.17 1253.15,-668.92 1226.42,-675.69"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="1225.27,-672.37 1216.41,-678.18 1226.96,-679.16 1225.27,-672.37"/>
+</g>
+<!-- sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_data.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge73" class="edge">
+<title>sourcefile~self_geometry_1d.f90&#45;&gt;sourcefile~self_data.f90</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M1312,-574.24C1126.6,-547.47 903.31,-561.86 802.52,-570.82"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="801.93,-567.36 792.28,-571.75 802.56,-574.33 801.93,-567.36"/>
+</g>
+<!-- sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_hdf5.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge77" class="edge">
+<title>sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_hdf5.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M746.5,-654.24C662.6,-650.23 641.34,-659.34 557.5,-654.24"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M555.5,-654.24C505.84,-651.21 381.16,-623.66 339,-597.24 318.17,-584.18 323.72,-568.47 303,-555.24 297.14,-551.49 290.61,-548.41 283.91,-545.86"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="284.64,-542.41 274.04,-542.51 282.39,-549.04 284.64,-542.41"/>
+</g>
+<!-- sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_metadata.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge78" class="edge">
+<title>sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_metadata.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M961.01,-640.09C902.73,-581.03 648.82,-323.77 576.68,-250.67"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="579.05,-248.09 569.54,-243.43 574.07,-253.01 579.05,-248.09"/>
+</g>
+<!-- sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge75" class="edge">
+<title>sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M555.5,-654.24C487.39,-650.31 470.08,-649.77 402,-654.24"/>
+</g>
+<!-- sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_lagrange.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge76" class="edge">
+<title>sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_lagrange.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M910.06,-654.7C865.04,-656 803.01,-656.84 748.5,-654.24"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M746.5,-654.24C698.06,-651.92 644.05,-639.46 606.22,-629.06"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="607.05,-625.66 596.48,-626.33 605.16,-632.4 607.05,-625.66"/>
+</g>
+<!-- sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_data.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge79" class="edge">
+<title>sourcefile~self_scalar_1d_t.f90&#45;&gt;sourcefile~self_data.f90</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M937.43,-640.19C898.54,-627.03 836.14,-605.91 793.79,-591.57"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="794.87,-588.24 784.28,-588.35 792.63,-594.87 794.87,-588.24"/>
+</g>
+<!-- sourcefile~self_quadrature.f90&#45;&gt;sourcefile~self_constants.f90 -->
+<g id="sourcefile~~self_advection_diffusion_1d.f90~~EfferentGraph_edge80" class="edge">
+<title>sourcefile~self_quadrature.f90&#45;&gt;sourcefile~self_constants.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M178.5,-564.2C159.31,-559.39 137.05,-553.81 116.97,-548.77"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="117.56,-545.31 107.01,-546.27 115.85,-552.1 117.56,-545.31"/>
+</g>
+</g>
+</svg>
+</div><script>var pansourcefileself_advection_diffusion_1df90EfferentGraph = svgPanZoom('#sourcefileself_advection_diffusion_1df90EfferentGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="202pt" height="32pt"
+ viewBox="0.00 0.00 201.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 197.5,-28 197.5,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="193.5,-24 88.5,-24 88.5,0 193.5,0 193.5,-24"/>
+<text text-anchor="middle" x="141" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+<br>
+    <section class="visible-xs visible-sm hidden-md">
+      <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/self_advection_diffusion_1d.html">self_advection_diffusion_1d</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/self_advection_diffusion_1d.f90.html#src">SELF_advection_diffusion_1d.f90</a>
+  </div>
+</div>
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="c">! //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// !</span>
+<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">!</span>
+<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">! Maintainers : support@fluidnumerics.com</span>
+<a id="ln-4" name="ln-4" href="#ln-4"></a><span class="c">! Official Repository : https://github.com/FluidNumerics/self/</span>
+<a id="ln-5" name="ln-5" href="#ln-5"></a><span class="c">!</span>
+<a id="ln-6" name="ln-6" href="#ln-6"></a><span class="c">! Copyright © 2024 Fluid Numerics LLC</span>
+<a id="ln-7" name="ln-7" href="#ln-7"></a><span class="c">!</span>
+<a id="ln-8" name="ln-8" href="#ln-8"></a><span class="c">! Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</span>
+<a id="ln-9" name="ln-9" href="#ln-9"></a><span class="c">!</span>
+<a id="ln-10" name="ln-10" href="#ln-10"></a><span class="c">! 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</span>
+<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="c">!</span>
+<a id="ln-12" name="ln-12" href="#ln-12"></a><span class="c">! 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in</span>
+<a id="ln-13" name="ln-13" href="#ln-13"></a><span class="c">!    the documentation and/or other materials provided with the distribution.</span>
+<a id="ln-14" name="ln-14" href="#ln-14"></a><span class="c">!</span>
+<a id="ln-15" name="ln-15" href="#ln-15"></a><span class="c">! 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from</span>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="c">!    this software without specific prior written permission.</span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="c">!</span>
+<a id="ln-18" name="ln-18" href="#ln-18"></a><span class="c">! THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<a id="ln-19" name="ln-19" href="#ln-19"></a><span class="c">! LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span>
+<a id="ln-20" name="ln-20" href="#ln-20"></a><span class="c">! HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span>
+<a id="ln-21" name="ln-21" href="#ln-21"></a><span class="c">! LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span>
+<a id="ln-22" name="ln-22" href="#ln-22"></a><span class="c">! THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF</span>
+<a id="ln-23" name="ln-23" href="#ln-23"></a><span class="c">! THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a id="ln-24" name="ln-24" href="#ln-24"></a><span class="c">!</span>
+<a id="ln-25" name="ln-25" href="#ln-25"></a><span class="c">! //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// !</span>
+<a id="ln-26" name="ln-26" href="#ln-26"></a>
+<a id="ln-27" name="ln-27" href="#ln-27"></a><span class="k">module </span><span class="n">self_advection_diffusion_1d</span>
+<a id="ln-28" name="ln-28" href="#ln-28"></a>
+<a id="ln-29" name="ln-29" href="#ln-29"></a><span class="w">  </span><span class="k">use </span><span class="n">self_dgmodel1d</span>
+<a id="ln-30" name="ln-30" href="#ln-30"></a><span class="w">  </span><span class="k">use </span><span class="n">self_advection_diffusion_1d_t</span>
+<a id="ln-31" name="ln-31" href="#ln-31"></a><span class="w">  </span><span class="k">use </span><span class="n">SELF_GPU</span>
+<a id="ln-32" name="ln-32" href="#ln-32"></a>
+<a id="ln-33" name="ln-33" href="#ln-33"></a><span class="w">  </span><span class="k">implicit none</span>
+<a id="ln-34" name="ln-34" href="#ln-34"></a>
+<a id="ln-35" name="ln-35" href="#ln-35"></a><span class="k">  type</span><span class="p">,</span><span class="k">extends</span><span class="p">(</span><span class="n">advection_diffusion_1d_t</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">advection_diffusion_1d</span>
+<a id="ln-36" name="ln-36" href="#ln-36"></a>
+<a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">  </span><span class="k">contains</span>
+<a id="ln-38" name="ln-38" href="#ln-38"></a><span class="k">    procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">setboundarycondition</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">setboundarycondition_advection_diffusion_1d</span>
+<a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">    </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">setgradientboundarycondition</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">setgradientboundarycondition_advection_diffusion_1d</span>
+<a id="ln-40" name="ln-40" href="#ln-40"></a><span class="w">    </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">boundaryflux</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">boundaryflux_advection_diffusion_1d</span>
+<a id="ln-41" name="ln-41" href="#ln-41"></a><span class="w">    </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fluxmethod</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fluxmethod_advection_diffusion_1d</span>
+<a id="ln-42" name="ln-42" href="#ln-42"></a>
+<a id="ln-43" name="ln-43" href="#ln-43"></a><span class="w">  </span><span class="k">endtype </span><span class="n">advection_diffusion_1d</span>
+<a id="ln-44" name="ln-44" href="#ln-44"></a>
+<a id="ln-45" name="ln-45" href="#ln-45"></a><span class="w">  </span><span class="k">interface</span>
+<a id="ln-46" name="ln-46" href="#ln-46"></a><span class="k">    subroutine </span><span class="n">setboundarycondition_advection_diffusion_1d_gpu</span><span class="p">(</span><span class="n">extboundary</span><span class="p">,</span><span class="n">boundary</span><span class="p">,</span><span class="n">nel</span><span class="p">,</span><span class="n">nvar</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-47" name="ln-47" href="#ln-47"></a><span class="w">      </span><span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;setboundarycondition_advection_diffusion_1d_gpu&quot;</span><span class="p">)</span>
+<a id="ln-48" name="ln-48" href="#ln-48"></a><span class="w">      </span><span class="k">use </span><span class="nb">iso_c_binding</span>
+<a id="ln-49" name="ln-49" href="#ln-49"></a><span class="nb">      </span><span class="k">type</span><span class="p">(</span><span class="kt">c_ptr</span><span class="p">),</span><span class="k">value</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">extboundary</span><span class="p">,</span><span class="n">boundary</span>
+<a id="ln-50" name="ln-50" href="#ln-50"></a><span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="k">value</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nel</span><span class="p">,</span><span class="n">nvar</span>
+<a id="ln-51" name="ln-51" href="#ln-51"></a><span class="w">    </span><span class="k">endsubroutine </span><span class="n">setboundarycondition_advection_diffusion_1d_gpu</span>
+<a id="ln-52" name="ln-52" href="#ln-52"></a><span class="w">  </span><span class="k">endinterface</span>
+<a id="ln-53" name="ln-53" href="#ln-53"></a>
+<a id="ln-54" name="ln-54" href="#ln-54"></a><span class="k">  interface</span>
+<a id="ln-55" name="ln-55" href="#ln-55"></a><span class="k">    subroutine </span><span class="n">fluxmethod_advection_diffusion_1d_gpu</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span><span class="n">solutiongradient</span><span class="p">,</span><span class="n">flux</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">nu</span><span class="p">,</span><span class="n">ndof</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-56" name="ln-56" href="#ln-56"></a><span class="w">      </span><span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fluxmethod_advection_diffusion_1d_gpu&quot;</span><span class="p">)</span>
+<a id="ln-57" name="ln-57" href="#ln-57"></a><span class="w">      </span><span class="k">use </span><span class="nb">iso_c_binding</span>
+<a id="ln-58" name="ln-58" href="#ln-58"></a><span class="nb">      </span><span class="k">use </span><span class="n">SELF_Constants</span>
+<a id="ln-59" name="ln-59" href="#ln-59"></a><span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="kt">c_ptr</span><span class="p">),</span><span class="k">value</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">solution</span><span class="p">,</span><span class="n">solutiongradient</span><span class="p">,</span><span class="n">flux</span>
+<a id="ln-60" name="ln-60" href="#ln-60"></a><span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">c_prec</span><span class="p">),</span><span class="k">value</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="n">nu</span>
+<a id="ln-61" name="ln-61" href="#ln-61"></a><span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="k">value</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ndof</span>
+<a id="ln-62" name="ln-62" href="#ln-62"></a><span class="w">    </span><span class="k">endsubroutine </span><span class="n">fluxmethod_advection_diffusion_1d_gpu</span>
+<a id="ln-63" name="ln-63" href="#ln-63"></a><span class="w">  </span><span class="k">endinterface</span>
+<a id="ln-64" name="ln-64" href="#ln-64"></a>
+<a id="ln-65" name="ln-65" href="#ln-65"></a><span class="k">  interface</span>
+<a id="ln-66" name="ln-66" href="#ln-66"></a><span class="k">    subroutine </span><span class="n">boundaryflux_advection_diffusion_1d_gpu</span><span class="p">(</span><span class="n">fb</span><span class="p">,</span><span class="n">fextb</span><span class="p">,</span><span class="n">dfavg</span><span class="p">,</span><span class="n">flux</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">nu</span><span class="p">,</span><span class="n">ndof</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-67" name="ln-67" href="#ln-67"></a><span class="w">      </span><span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;boundaryflux_advection_diffusion_1d_gpu&quot;</span><span class="p">)</span>
+<a id="ln-68" name="ln-68" href="#ln-68"></a><span class="w">      </span><span class="k">use </span><span class="nb">iso_c_binding</span>
+<a id="ln-69" name="ln-69" href="#ln-69"></a><span class="nb">      </span><span class="k">use </span><span class="n">SELF_Constants</span>
+<a id="ln-70" name="ln-70" href="#ln-70"></a><span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="kt">c_ptr</span><span class="p">),</span><span class="k">value</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fb</span><span class="p">,</span><span class="n">fextb</span><span class="p">,</span><span class="n">dfavg</span><span class="p">,</span><span class="n">flux</span>
+<a id="ln-71" name="ln-71" href="#ln-71"></a><span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">c_prec</span><span class="p">),</span><span class="k">value</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="n">nu</span>
+<a id="ln-72" name="ln-72" href="#ln-72"></a><span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="k">value</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ndof</span>
+<a id="ln-73" name="ln-73" href="#ln-73"></a><span class="w">    </span><span class="k">endsubroutine </span><span class="n">boundaryflux_advection_diffusion_1d_gpu</span>
+<a id="ln-74" name="ln-74" href="#ln-74"></a><span class="w">  </span><span class="k">endinterface</span>
+<a id="ln-75" name="ln-75" href="#ln-75"></a>
+<a id="ln-76" name="ln-76" href="#ln-76"></a><span class="k">contains</span>
+<a id="ln-77" name="ln-77" href="#ln-77"></a>
+<a id="ln-78" name="ln-78" href="#ln-78"></a><span class="k">  subroutine </span><span class="n">setboundarycondition_advection_diffusion_1d</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+<a id="ln-79" name="ln-79" href="#ln-79"></a><span class="w">    </span><span class="c">!! Boundary conditions are set to periodic boundary conditions</span>
+<a id="ln-80" name="ln-80" href="#ln-80"></a><span class="w">    </span><span class="k">implicit none</span>
+<a id="ln-81" name="ln-81" href="#ln-81"></a><span class="k">    class</span><span class="p">(</span><span class="n">advection_diffusion_1d</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<a id="ln-82" name="ln-82" href="#ln-82"></a>
+<a id="ln-83" name="ln-83" href="#ln-83"></a><span class="w">    </span><span class="k">call </span><span class="n">setboundarycondition_advection_diffusion_1d_gpu</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">extboundary_gpu</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-84" name="ln-84" href="#ln-84"></a><span class="w">                                                         </span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">boundary_gpu</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">nelem</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">nvar</span><span class="p">)</span>
+<a id="ln-85" name="ln-85" href="#ln-85"></a>
+<a id="ln-86" name="ln-86" href="#ln-86"></a><span class="w">  </span><span class="k">endsubroutine </span><span class="n">setboundarycondition_advection_diffusion_1d</span>
+<a id="ln-87" name="ln-87" href="#ln-87"></a>
+<a id="ln-88" name="ln-88" href="#ln-88"></a><span class="w">  </span><span class="k">subroutine </span><span class="n">setgradientboundarycondition_advection_diffusion_1d</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+<a id="ln-89" name="ln-89" href="#ln-89"></a><span class="w">    </span><span class="c">!! Gradient boundary conditions are set to periodic boundary conditions</span>
+<a id="ln-90" name="ln-90" href="#ln-90"></a><span class="w">    </span><span class="k">implicit none</span>
+<a id="ln-91" name="ln-91" href="#ln-91"></a><span class="k">    class</span><span class="p">(</span><span class="n">advection_diffusion_1d</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<a id="ln-92" name="ln-92" href="#ln-92"></a>
+<a id="ln-93" name="ln-93" href="#ln-93"></a><span class="w">    </span><span class="k">call </span><span class="n">setboundarycondition_advection_diffusion_1d_gpu</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">solutiongradient</span><span class="p">%</span><span class="n">extboundary_gpu</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-94" name="ln-94" href="#ln-94"></a><span class="w">                                                         </span><span class="n">this</span><span class="p">%</span><span class="n">solutiongradient</span><span class="p">%</span><span class="n">boundary_gpu</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">nelem</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">nvar</span><span class="p">)</span>
+<a id="ln-95" name="ln-95" href="#ln-95"></a>
+<a id="ln-96" name="ln-96" href="#ln-96"></a><span class="w">  </span><span class="k">endsubroutine </span><span class="n">setgradientboundarycondition_advection_diffusion_1d</span>
+<a id="ln-97" name="ln-97" href="#ln-97"></a>
+<a id="ln-98" name="ln-98" href="#ln-98"></a><span class="w">  </span><span class="k">subroutine </span><span class="n">fluxmethod_advection_diffusion_1d</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+<a id="ln-99" name="ln-99" href="#ln-99"></a><span class="w">    </span><span class="k">implicit none</span>
+<a id="ln-100" name="ln-100" href="#ln-100"></a><span class="k">    class</span><span class="p">(</span><span class="n">advection_diffusion_1d</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<a id="ln-101" name="ln-101" href="#ln-101"></a><span class="w">    </span><span class="c">! Local</span>
+<a id="ln-102" name="ln-102" href="#ln-102"></a><span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ndof</span>
+<a id="ln-103" name="ln-103" href="#ln-103"></a>
+<a id="ln-104" name="ln-104" href="#ln-104"></a><span class="w">    </span><span class="n">ndof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">nelem</span><span class="o">*</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">nvar</span><span class="o">*</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">interp</span><span class="p">%</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<a id="ln-105" name="ln-105" href="#ln-105"></a>
+<a id="ln-106" name="ln-106" href="#ln-106"></a><span class="w">    </span><span class="k">call </span><span class="n">fluxmethod_advection_diffusion_1d_gpu</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">interior_gpu</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-107" name="ln-107" href="#ln-107"></a><span class="w">                                               </span><span class="n">this</span><span class="p">%</span><span class="n">solutiongradient</span><span class="p">%</span><span class="n">interior_gpu</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">flux</span><span class="p">%</span><span class="n">interior_gpu</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-108" name="ln-108" href="#ln-108"></a><span class="w">                                               </span><span class="n">this</span><span class="p">%</span><span class="n">u</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">nu</span><span class="p">,</span><span class="n">ndof</span><span class="p">)</span>
+<a id="ln-109" name="ln-109" href="#ln-109"></a>
+<a id="ln-110" name="ln-110" href="#ln-110"></a><span class="w">  </span><span class="k">endsubroutine </span><span class="n">fluxmethod_advection_diffusion_1d</span>
+<a id="ln-111" name="ln-111" href="#ln-111"></a>
+<a id="ln-112" name="ln-112" href="#ln-112"></a><span class="w">  </span><span class="k">subroutine </span><span class="n">boundaryflux_advection_diffusion_1d</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+<a id="ln-113" name="ln-113" href="#ln-113"></a><span class="w">    </span><span class="c">! this method uses an linear upwind solver for the</span>
+<a id="ln-114" name="ln-114" href="#ln-114"></a><span class="w">    </span><span class="c">! advective flux and the bassi-rebay method for the</span>
+<a id="ln-115" name="ln-115" href="#ln-115"></a><span class="w">    </span><span class="c">! diffusive fluxes</span>
+<a id="ln-116" name="ln-116" href="#ln-116"></a><span class="w">    </span><span class="k">implicit none</span>
+<a id="ln-117" name="ln-117" href="#ln-117"></a><span class="k">    class</span><span class="p">(</span><span class="n">advection_diffusion_1d</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<a id="ln-118" name="ln-118" href="#ln-118"></a><span class="w">    </span><span class="c">! Local</span>
+<a id="ln-119" name="ln-119" href="#ln-119"></a><span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ndof</span>
+<a id="ln-120" name="ln-120" href="#ln-120"></a>
+<a id="ln-121" name="ln-121" href="#ln-121"></a><span class="w">    </span><span class="n">ndof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">nelem</span><span class="o">*</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">nvar</span><span class="o">*</span><span class="mi">2</span>
+<a id="ln-122" name="ln-122" href="#ln-122"></a><span class="w">    </span><span class="k">call </span><span class="n">boundaryflux_advection_diffusion_1d_gpu</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">boundary_gpu</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-123" name="ln-123" href="#ln-123"></a><span class="w">                                                 </span><span class="n">this</span><span class="p">%</span><span class="n">solution</span><span class="p">%</span><span class="n">extBoundary_gpu</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">solutionGradient</span><span class="p">%</span><span class="n">avgBoundary_gpu</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-124" name="ln-124" href="#ln-124"></a><span class="w">                                                 </span><span class="n">this</span><span class="p">%</span><span class="n">flux</span><span class="p">%</span><span class="n">boundarynormal_gpu</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">u</span><span class="p">,</span><span class="n">this</span><span class="p">%</span><span class="n">nu</span><span class="p">,</span><span class="n">ndof</span><span class="p">)</span>
+<a id="ln-125" name="ln-125" href="#ln-125"></a>
+<a id="ln-126" name="ln-126" href="#ln-126"></a><span class="w">  </span><span class="k">endsubroutine </span><span class="n">boundaryflux_advection_diffusion_1d</span>
+<a id="ln-127" name="ln-127" href="#ln-127"></a>
+<a id="ln-128" name="ln-128" href="#ln-128"></a><span class="k">endmodule </span><span class="n">self_advection_diffusion_1d</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SELF was developed by Fluid Numerics<br>&copy; 2025 3-Clause BSD with attribution
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-01-30 19:14            </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>

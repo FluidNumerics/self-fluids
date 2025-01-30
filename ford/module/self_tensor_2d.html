@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Spectral Element Library in Fortran. Fortran classes for implementing spectral element methods on CPU and GPU hardware.">
+    <meta name="author" content="Fluid Numerics" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>SELF_Tensor_2D &ndash; SELF</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SELF </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>SELF_Tensor_2D 
+    <small>Module</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+    <li><i class="fa fa-legal"></i> 3-Clause BSD with attribution</li> 
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.6% of total for modules and submodules.">79 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/SELF_Tensor_2D.f90"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li><a href='../sourcefile/self_tensor_2d.f90.html'>SELF_Tensor_2D.f90</a></li>
+     <li class="active">SELF_Tensor_2D</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/self_tensor_2d.html#type-tensor2d">Tensor2D</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      <a class="list-group-item" href="../module/self_tensor_2d.html#proc-free_tensor2d">Free_Tensor2D</a>
+      <a class="list-group-item" href="../module/self_tensor_2d.html#proc-init_tensor2d">Init_Tensor2D</a>
+      <a class="list-group-item" href="../module/self_tensor_2d.html#proc-updatedevice_tensor2d">UpdateDevice_Tensor2D</a>
+      <a class="list-group-item" href="../module/self_tensor_2d.html#proc-updatehost_tensor2d">UpdateHost_Tensor2D</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+<br>        <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      <li class="list-group-item">
+  <ul class="list-inline">
+    <li><a href="http://fortranwiki.org/fortran/show/iso_c_binding">iso_c_binding</a></li>
+    <li><a href='../module/self_gpu.html'>SELF_GPU</a></li>
+    <li><a href='../module/self_tensor_2d_t.html'>SELF_Tensor_2D_t</a></li>
+    <li><a href='../module/self_constants.html'>SELF_Constants</a></li>
+    <li><a href="http://fortranwiki.org/fortran/show/iso_fortran_env">iso_fortran_env</a></li>
+    <li><a href='../module/self_gpublas~2.html'>SELF_GPUBLAS</a></li>
+  </ul>
+      </li>
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~self_tensor_2d~~UsesGraph Pages: 1 -->
+<svg id="moduleself_tensor_2dUsesGraph" width="641pt" height="365pt"
+ viewBox="0.00 0.00 641.00 364.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~self_tensor_2d~~UsesGraph" class="graph" transform="scale(0.6 0.6) rotate(0) translate(4 599.91)">
+<title>module~~self_tensor_2d~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-599.91 1058,-599.91 1058,4 -4,4"/>
+<!-- module~self_tensor_2d -->
+<g id="module~~self_tensor_2d~~UsesGraph_node1" class="node">
+<title>module~self_tensor_2d</title>
+<polygon fill="none" stroke="black" points="1054,-243.45 956,-243.45 956,-219.45 1054,-219.45 1054,-243.45"/>
+<text text-anchor="middle" x="1005" y="-229.05" font-family="Helvetica,sans-Serif" font-size="10.50">SELF_Tensor_2D</text>
+</g>
+<!-- module~self_gpu -->
+<g id="module~~self_tensor_2d~~UsesGraph_node2" class="node">
+<title>module~self_gpu</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node2"><a xlink:href=".././module/self_gpu.html" xlink:title="SELF_GPU">
+<polygon fill="#337ab7" stroke="#337ab7" points="523,-569.45 458,-569.45 458,-545.45 523,-545.45 523,-569.45"/>
+<text text-anchor="middle" x="490.5" y="-555.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_GPU</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d&#45;&gt;module~self_gpu -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge1" class="edge">
+<title>module~self_tensor_2d&#45;&gt;module~self_gpu</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M624,-557.45C593.85,-562.44 559.3,-562.25 533.05,-560.92"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="533.25,-557.42 523.06,-560.33 532.84,-564.41 533.25,-557.42"/>
+</g>
+<!-- module~self_gpublas~2 -->
+<g id="module~~self_tensor_2d~~UsesGraph_node3" class="node">
+<title>module~self_gpublas~2</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node3"><a xlink:href=".././module/self_gpublas~2.html" xlink:title="SELF_GPUBLAS">
+<polygon fill="#337ab7" stroke="#337ab7" points="384,-531.45 291,-531.45 291,-507.45 384,-507.45 384,-531.45"/>
+<text text-anchor="middle" x="337.5" y="-517.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_GPUBLAS</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d&#45;&gt;module~self_gpublas~2 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge2" class="edge">
+<title>module~self_tensor_2d&#45;&gt;module~self_gpublas~2</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M865.5,-469.45C767.31,-526.18 737.88,-538.93 626,-557.45"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M624,-557.45C586.65,-561.99 579.1,-542.71 542,-536.45 492.37,-528.08 435.2,-523.77 394.12,-521.58"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="394.2,-518.08 384.03,-521.07 393.84,-525.08 394.2,-518.08"/>
+</g>
+<!-- module~self_tensor_2d_t -->
+<g id="module~~self_tensor_2d~~UsesGraph_node4" class="node">
+<title>module~self_tensor_2d_t</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node4"><a xlink:href=".././module/self_tensor_2d_t.html" xlink:title="SELF_Tensor_2D_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="920,-243.45 813,-243.45 813,-219.45 920,-219.45 920,-243.45"/>
+<text text-anchor="middle" x="866.5" y="-229.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Tensor_2D_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d&#45;&gt;module~self_tensor_2d_t -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge5" class="edge">
+<title>module~self_tensor_2d&#45;&gt;module~self_tensor_2d_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M955.88,-231.45C947.6,-231.45 938.89,-231.45 930.3,-231.45"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="930.3,-227.95 920.3,-231.45 930.3,-234.95 930.3,-227.95"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_node5" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node5"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-181.45 0,-181.45 0,-157.45 94,-157.45 94,-181.45"/>
+<text text-anchor="middle" x="47" y="-167.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d&#45;&gt;iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge4" class="edge">
+<title>module~self_tensor_2d&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M997.58,-219.2C972.2,-172.66 873.93,-9.45 743.5,-9.45 743.5,-9.45 743.5,-9.45 336.5,-9.45 244.33,-9.45 207.7,21.12 130,-28.45 86.67,-56.09 63.57,-115.41 53.79,-147.59"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="50.37,-146.81 50.97,-157.38 57.1,-148.74 50.37,-146.81"/>
+</g>
+<!-- iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_node6" class="node">
+<title>iso_c_binding</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node6"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="89,-492.45 5,-492.45 5,-468.45 89,-468.45 89,-492.45"/>
+<text text-anchor="middle" x="47" y="-478.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge3" class="edge">
+<title>module~self_tensor_2d&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M624,-557.45C586.73,-562.59 579.33,-573.75 542,-578.45 383.92,-598.37 335.03,-610.22 184,-559.45"/>
+</g>
+<!-- module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_node7" class="node">
+<title>module~self_constants</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node7"><a xlink:href=".././module/self_constants.html" xlink:title="SELF_Constants">
+<polygon fill="#337ab7" stroke="#337ab7" points="231,-263.45 135,-263.45 135,-239.45 231,-239.45 231,-263.45"/>
+<text text-anchor="middle" x="183" y="-249.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Constants</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge6" class="edge">
+<title>module~self_tensor_2d&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1001.35,-243.72C991.81,-284.55 955.02,-416.27 867.5,-469.45"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M865.5,-469.45C749.01,-540.24 395.42,-372.31 272,-314.45 247.29,-302.87 222.3,-284.15 205.29,-270.12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="207.52,-267.43 197.62,-263.66 203.02,-272.78 207.52,-267.43"/>
+</g>
+<!-- module~self_gpu&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge7" class="edge">
+<title>module~self_gpu&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M336.5,-559.45C268.84,-555.53 248.24,-581.05 184,-559.45"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M182,-559.45C158.68,-551.61 151.7,-552.05 130,-540.45 108.34,-528.87 85.99,-512.14 70.1,-499.29"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="71.93,-496.26 61.99,-492.6 67.48,-501.66 71.93,-496.26"/>
+</g>
+<!-- module~self_gpu_enums -->
+<g id="module~~self_tensor_2d~~UsesGraph_node8" class="node">
+<title>module~self_gpu_enums</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node8"><a xlink:href=".././module/self_gpu_enums.html" xlink:title="SELF_GPU_enums">
+<polygon fill="#337ab7" stroke="#337ab7" points="236,-531.45 130,-531.45 130,-507.45 236,-507.45 236,-531.45"/>
+<text text-anchor="middle" x="183" y="-517.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_GPU_enums</text>
+</a>
+</g>
+</g>
+<!-- module~self_gpu&#45;&gt;module~self_gpu_enums -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge8" class="edge">
+<title>module~self_gpu&#45;&gt;module~self_gpu_enums</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M457.95,-559.17C427.38,-560.53 379.72,-561.84 338.5,-559.45"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M336.5,-559.45C297.83,-557.21 255.32,-545.23 225.02,-534.95"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="225.84,-531.53 215.24,-531.55 223.54,-538.14 225.84,-531.53"/>
+</g>
+<!-- module~self_gpublas~2&#45;&gt;iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge9" class="edge">
+<title>module~self_gpublas~2&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M324.34,-507.43C301.99,-485.49 254.91,-440.03 236,-427.45 214.8,-413.36 202.57,-420.86 184,-403.45"/>
+</g>
+<!-- module~self_gpublas~2&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge11" class="edge">
+<title>module~self_gpublas~2&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M303.93,-507.43C293.58,-503.31 282.18,-498.47 272,-493.45 231.26,-473.35 228.42,-431.91 184,-441.45"/>
+</g>
+<!-- module~self_gpublas~2&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge12" class="edge">
+<title>module~self_gpublas~2&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M321.28,-507.32C307.05,-495.35 285.95,-475.92 272,-455.45 250.49,-423.89 209.58,-319.04 192.17,-273.21"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="195.36,-271.75 188.55,-263.64 188.82,-274.23 195.36,-271.75"/>
+</g>
+<!-- module~self_gpublas~2&#45;&gt;module~self_gpu_enums -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge10" class="edge">
+<title>module~self_gpublas~2&#45;&gt;module~self_gpu_enums</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M290.74,-519.45C276.77,-519.45 261.17,-519.45 246.29,-519.45"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="246.14,-515.95 236.14,-519.45 246.14,-522.95 246.14,-515.95"/>
+</g>
+<!-- module~self_tensor_2d_t&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge17" class="edge">
+<title>module~self_tensor_2d_t&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M860.85,-243.75C841.03,-293.79 758.58,-479.45 626,-479.45 626,-479.45 626,-479.45 489.5,-479.45 392.25,-479.45 368.38,-468.43 272,-455.45 232.75,-450.17 223.01,-434.6 184,-441.45"/>
+</g>
+<!-- module~self_tensor_2d_t&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge18" class="edge">
+<title>module~self_tensor_2d_t&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M812.9,-237.12C791.14,-240.23 765.83,-244.83 743.5,-251.45"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M741.5,-251.45C569.78,-302.37 517.23,-239.82 338.5,-251.45"/>
+</g>
+<!-- module~self_data -->
+<g id="module~~self_tensor_2d~~UsesGraph_node9" class="node">
+<title>module~self_data</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node9"><a xlink:href=".././module/self_data.html" xlink:title="SELF_Data">
+<polygon fill="#337ab7" stroke="#337ab7" points="777,-223.45 708,-223.45 708,-199.45 777,-199.45 777,-223.45"/>
+<text text-anchor="middle" x="742.5" y="-209.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Data</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d_t&#45;&gt;module~self_data -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge13" class="edge">
+<title>module~self_tensor_2d_t&#45;&gt;module~self_data</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M812.7,-222.8C804.09,-221.38 795.26,-219.94 786.91,-218.57"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="787.45,-215.11 777.02,-216.95 786.32,-222.02 787.45,-215.11"/>
+</g>
+<!-- HDF5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_node10" class="node">
+<title>HDF5</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="210,-61.45 156,-61.45 156,-37.45 210,-37.45 210,-61.45"/>
+<text text-anchor="middle" x="183" y="-47.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">HDF5</text>
+</g>
+<!-- module~self_tensor_2d_t&#45;&gt;HDF5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge16" class="edge">
+<title>module~self_tensor_2d_t&#45;&gt;HDF5</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M860.4,-219.37C846.83,-189.14 806.48,-111.01 743.5,-88.45"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M741.5,-88.45C693.17,-71.14 677.28,-86.04 626,-88.45"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M624,-88.45C586.42,-90.22 579.08,-73.8 542,-67.45 452.5,-52.14 428.58,-60.84 338.5,-49.45"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M336.5,-49.45C297.1,-43.9 251.41,-44.87 220.38,-46.61"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="219.82,-43.14 210.06,-47.25 220.26,-50.13 219.82,-43.14"/>
+</g>
+<!-- module~self_hdf5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_node11" class="node">
+<title>module~self_hdf5</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node11"><a xlink:href=".././module/self_hdf5.html" xlink:title="SELF_HDF5">
+<polygon fill="#337ab7" stroke="#337ab7" points="374,-101.45 301,-101.45 301,-77.45 374,-77.45 374,-101.45"/>
+<text text-anchor="middle" x="337.5" y="-87.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_HDF5</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d_t&#45;&gt;module~self_hdf5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge14" class="edge">
+<title>module~self_tensor_2d_t&#45;&gt;module~self_hdf5</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M624,-88.45C601.9,-89.49 597.46,-96.94 578,-107.45 537.05,-129.56 537.82,-170.89 491.5,-166.45"/>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M489.5,-166.45C445.07,-162.2 441.88,-137.37 403,-115.45 396.56,-111.82 389.52,-108.44 382.53,-105.4"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="383.66,-102.08 373.08,-101.47 380.97,-108.55 383.66,-102.08"/>
+</g>
+<!-- FEQParse -->
+<g id="module~~self_tensor_2d~~UsesGraph_node12" class="node">
+<title>FEQParse</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="656.5,-140.45 593.5,-140.45 593.5,-116.45 656.5,-116.45 656.5,-140.45"/>
+<text text-anchor="middle" x="625" y="-126.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">FEQParse</text>
+</g>
+<!-- module~self_tensor_2d_t&#45;&gt;FEQParse -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge15" class="edge">
+<title>module~self_tensor_2d_t&#45;&gt;FEQParse</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M741.5,-88.45C726.06,-82.92 687.18,-98.64 658.78,-111.97"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="657.1,-108.89 649.6,-116.37 660.13,-115.21 657.1,-108.89"/>
+</g>
+<!-- module~self_metadata -->
+<g id="module~~self_tensor_2d~~UsesGraph_node13" class="node">
+<title>module~self_metadata</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node13"><a xlink:href=".././module/self_metadata.html" xlink:title="SELF_Metadata">
+<polygon fill="#337ab7" stroke="#337ab7" points="537.5,-100.45 443.5,-100.45 443.5,-76.45 537.5,-76.45 537.5,-100.45"/>
+<text text-anchor="middle" x="490.5" y="-86.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Metadata</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d_t&#45;&gt;module~self_metadata -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge19" class="edge">
+<title>module~self_tensor_2d_t&#45;&gt;module~self_metadata</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M624,-88.45C598.98,-89.63 571.27,-89.8 547.69,-89.62"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="547.55,-86.11 537.52,-89.51 547.48,-93.11 547.55,-86.11"/>
+</g>
+<!-- module~self_lagrange~3 -->
+<g id="module~~self_tensor_2d~~UsesGraph_node14" class="node">
+<title>module~self_lagrange~3</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node14"><a xlink:href=".././module/self_lagrange~3.html" xlink:title="SELF_Lagrange">
+<polygon fill="#337ab7" stroke="#337ab7" points="672,-367.45 578,-367.45 578,-343.45 672,-343.45 672,-367.45"/>
+<text text-anchor="middle" x="625" y="-353.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Lagrange</text>
+</a>
+</g>
+</g>
+<!-- module~self_tensor_2d_t&#45;&gt;module~self_lagrange~3 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge20" class="edge">
+<title>module~self_tensor_2d_t&#45;&gt;module~self_lagrange~3</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M741.5,-251.45C696.98,-264.65 708.14,-300.3 672,-329.45 668.18,-332.53 663.96,-335.45 659.66,-338.16"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="657.66,-335.27 650.83,-343.37 661.22,-341.3 657.66,-335.27"/>
+</g>
+<!-- module~self_constants&#45;&gt;iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge22" class="edge">
+<title>module~self_constants&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M162.23,-239.35C139.56,-225.48 102.23,-202.64 76.45,-186.86"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="78.21,-183.83 67.85,-181.6 74.56,-189.81 78.21,-183.83"/>
+</g>
+<!-- module~self_constants&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge21" class="edge">
+<title>module~self_constants&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M174.8,-263.76C152.98,-301.05 87.45,-413.03 60.15,-459.69"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="57.11,-457.96 55.08,-468.36 63.15,-461.49 57.11,-457.96"/>
+</g>
+<!-- module~self_gpu_enums&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge23" class="edge">
+<title>module~self_gpu_enums&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M140.7,-507.43C127.58,-503.61 112.92,-499.34 99.19,-495.35"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="99.97,-491.93 89.39,-492.5 98.02,-498.65 99.97,-491.93"/>
+</g>
+<!-- module~self_data&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge27" class="edge">
+<title>module~self_data&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M624,-315.45C589.51,-333.21 354.32,-407.23 184,-441.45"/>
+</g>
+<!-- module~self_data&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge28" class="edge">
+<title>module~self_data&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M725.22,-223.56C719.66,-227.83 713.47,-232.75 708,-237.45 669.86,-270.25 670.72,-292.42 626,-315.45"/>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M624,-315.45C571.43,-342.52 550.6,-329.21 491.5,-327.45"/>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M489.5,-327.45C391.64,-324.54 281.14,-288.49 223.62,-267.1"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="224.77,-263.8 214.18,-263.55 222.3,-270.35 224.77,-263.8"/>
+</g>
+<!-- module~self_data&#45;&gt;HDF5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge24" class="edge">
+<title>module~self_data&#45;&gt;HDF5</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M624,-168.45C542.14,-141.12 511.21,-156.71 439,-109.45 418.71,-96.17 423.44,-81.5 403,-68.45 377.81,-52.37 368.15,-53.17 338.5,-49.45"/>
+</g>
+<!-- module~self_data&#45;&gt;module~self_hdf5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge25" class="edge">
+<title>module~self_data&#45;&gt;module~self_hdf5</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M624,-168.45C568.14,-149.8 550.13,-172.06 491.5,-166.45"/>
+</g>
+<!-- module~self_data&#45;&gt;FEQParse -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge26" class="edge">
+<title>module~self_data&#45;&gt;FEQParse</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M728.2,-199.37C714.6,-187.3 692.6,-168.56 672,-154.45 667.67,-151.48 662.97,-148.54 658.29,-145.76"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="659.82,-142.6 649.4,-140.65 656.33,-148.67 659.82,-142.6"/>
+</g>
+<!-- module~self_data&#45;&gt;module~self_metadata -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge29" class="edge">
+<title>module~self_data&#45;&gt;module~self_metadata</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M710.82,-199.38C687.66,-190.42 655.02,-178.14 626,-168.45"/>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M624,-168.45C603.02,-161.45 596.48,-161.6 578,-149.45 559.35,-137.19 560.12,-127.48 542,-114.45 537.5,-111.21 532.53,-108.14 527.53,-105.32"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="529.04,-102.16 518.57,-100.53 525.74,-108.34 529.04,-102.16"/>
+</g>
+<!-- module~self_data&#45;&gt;module~self_lagrange~3 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge30" class="edge">
+<title>module~self_data&#45;&gt;module~self_lagrange~3</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M722.17,-223.64C717.05,-227.57 711.88,-232.26 708,-237.45 681.71,-272.62 700.78,-296.29 672,-329.45 669.37,-332.48 666.3,-335.24 663,-337.72"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="660.92,-334.9 654.51,-343.34 664.78,-340.74 660.92,-334.9"/>
+</g>
+<!-- module~self_hdf5&#45;&gt;iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge32" class="edge">
+<title>module~self_hdf5&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M300.85,-87C258.61,-85.38 186.82,-86.7 130,-108.45 105.87,-117.69 82.66,-136.16 67.13,-150.36"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="64.62,-147.92 59.75,-157.33 69.42,-153.01 64.62,-147.92"/>
+</g>
+<!-- module~self_hdf5&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge31" class="edge">
+<title>module~self_hdf5&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M300.83,-98.76C290.67,-102.68 280.16,-108.1 272,-115.45 246.6,-138.35 254.45,-154.66 236,-183.45 225.21,-200.29 211.4,-218.21 200.73,-231.42"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="197.85,-229.41 194.23,-239.37 203.27,-233.84 197.85,-229.41"/>
+</g>
+<!-- module~self_hdf5&#45;&gt;HDF5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge33" class="edge">
+<title>module~self_hdf5&#45;&gt;HDF5</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M300.75,-80.07C276.56,-73.73 244.71,-65.38 220.39,-59"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="221.03,-55.55 210.47,-56.39 219.26,-62.32 221.03,-55.55"/>
+</g>
+<!-- mpi -->
+<g id="module~~self_tensor_2d~~UsesGraph_node15" class="node">
+<title>mpi</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node15"><a xlink:href="http://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node410.htm" xlink:title="mpi">
+<polygon fill="#337ab7" stroke="#337ab7" points="210,-141.45 156,-141.45 156,-117.45 210,-117.45 210,-141.45"/>
+<text text-anchor="middle" x="183" y="-127.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mpi</text>
+</a>
+</g>
+</g>
+<!-- module~self_hdf5&#45;&gt;mpi -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge34" class="edge">
+<title>module~self_hdf5&#45;&gt;mpi</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M300.75,-98.83C276.56,-105.17 244.71,-113.53 220.39,-119.91"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="219.26,-116.58 210.47,-122.51 221.03,-123.36 219.26,-116.58"/>
+</g>
+<!-- module~self_metadata&#45;&gt;HDF5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge35" class="edge">
+<title>module~self_metadata&#45;&gt;HDF5</title>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M453.7,-76.43C423.41,-66.94 378.66,-54.49 338.5,-49.45"/>
+</g>
+<!-- module~self_metadata&#45;&gt;module~self_hdf5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge36" class="edge">
+<title>module~self_metadata&#45;&gt;module~self_hdf5</title>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M443.37,-88.76C424.64,-88.88 403.05,-89.02 384.34,-89.15"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="384.26,-85.65 374.28,-89.21 384.31,-92.65 384.26,-85.65"/>
+</g>
+<!-- module~self_lagrange~3&#45;&gt;module~self_gpu -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge37" class="edge">
+<title>module~self_lagrange~3&#45;&gt;module~self_gpu</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M616.11,-367.48C594.25,-400.8 532.73,-494.6 505.16,-536.63"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="502.08,-534.95 499.52,-545.23 507.93,-538.79 502.08,-534.95"/>
+</g>
+<!-- module~self_lagrange~3&#45;&gt;iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge40" class="edge">
+<title>module~self_lagrange~3&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M602.78,-367.47C556.22,-392.57 441.06,-447.73 338.5,-441.45"/>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M336.5,-441.45C301.59,-442.36 209.47,-427.34 184,-403.45"/>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M182,-403.45C114.82,-340.45 71.76,-236.09 55.42,-191.14"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="58.65,-189.78 52.01,-181.53 52.05,-192.12 58.65,-189.78"/>
+</g>
+<!-- module~self_lagrange~3&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge38" class="edge">
+<title>module~self_lagrange~3&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M336.5,-441.45C268.85,-437.31 250.45,-428.1 184,-441.45"/>
+</g>
+<!-- module~self_lagrange~3&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge41" class="edge">
+<title>module~self_lagrange~3&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M585.02,-343.39C558.86,-336.24 523.46,-328.4 491.5,-327.45"/>
+</g>
+<!-- module~self_lagrange_t -->
+<g id="module~~self_tensor_2d~~UsesGraph_node16" class="node">
+<title>module~self_lagrange_t</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node16"><a xlink:href=".././module/self_lagrange_t.html" xlink:title="SELF_Lagrange_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="542,-223.45 439,-223.45 439,-199.45 542,-199.45 542,-223.45"/>
+<text text-anchor="middle" x="490.5" y="-209.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Lagrange_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_lagrange~3&#45;&gt;module~self_lagrange_t -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge39" class="edge">
+<title>module~self_lagrange~3&#45;&gt;module~self_lagrange_t</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M597.89,-343.21C591.02,-339.34 583.9,-334.69 578,-329.45 545.5,-300.58 517.8,-257.58 503,-232.24"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="505.98,-230.4 497.98,-223.46 499.91,-233.88 505.98,-230.4"/>
+</g>
+<!-- module~self_lagrange_t&#45;&gt;iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge47" class="edge">
+<title>module~self_lagrange_t&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M336.5,-129.45C269.78,-108.05 254.07,-169.6 184,-169.45"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M182,-169.45C156.57,-169.4 128.42,-169.39 104.51,-169.4"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="104.2,-165.9 94.2,-169.4 104.2,-172.9 104.2,-165.9"/>
+</g>
+<!-- module~self_lagrange_t&#45;&gt;iso_c_binding -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge46" class="edge">
+<title>module~self_lagrange_t&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M470.27,-223.47C418.57,-255.82 279.95,-342.9 272,-351.45 249.25,-375.92 260.4,-394.63 236,-417.45 217.41,-434.84 208.89,-436.1 184,-441.45"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M182,-441.45C151.91,-447.5 118.78,-457.11 93,-465.28"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="91.59,-462.05 83.14,-468.44 93.73,-468.72 91.59,-462.05"/>
+</g>
+<!-- module~self_lagrange_t&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge48" class="edge">
+<title>module~self_lagrange_t&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M458.28,-223.53C428.15,-234.27 380.99,-248.69 338.5,-251.45"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M336.5,-251.45C305.09,-253.5 269.96,-253.64 241.34,-253.21"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="241.17,-249.71 231.11,-253.03 241.05,-256.71 241.17,-249.71"/>
+</g>
+<!-- module~self_lagrange_t&#45;&gt;HDF5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge45" class="edge">
+<title>module~self_lagrange_t&#45;&gt;HDF5</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M467.82,-199.29C458.69,-193.87 448.09,-187.2 439,-180.45 421.81,-167.69 421.72,-158.84 403,-148.45 376.87,-133.95 366.96,-138.58 338.5,-129.45"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M336.5,-129.45C308.04,-120.32 298.96,-123.35 272,-110.45 248.15,-99.04 223.64,-81.48 206.57,-68.13"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="208.36,-65.08 198.36,-61.58 204,-70.56 208.36,-65.08"/>
+</g>
+<!-- module~self_lagrange_t&#45;&gt;module~self_hdf5 -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge43" class="edge">
+<title>module~self_lagrange_t&#45;&gt;module~self_hdf5</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M464.28,-199.38C455.56,-194.37 446.18,-187.96 439,-180.45 416.18,-156.58 427.74,-137.33 403,-115.45 397.34,-110.45 390.6,-106.34 383.63,-102.98"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="384.66,-99.61 374.09,-98.86 381.88,-106.04 384.66,-99.61"/>
+</g>
+<!-- module~self_supportroutines -->
+<g id="module~~self_tensor_2d~~UsesGraph_node17" class="node">
+<title>module~self_supportroutines</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node17"><a xlink:href=".././module/self_supportroutines.html" xlink:title="SELF_SupportRoutines">
+<polygon fill="#337ab7" stroke="#337ab7" points="403,-181.45 272,-181.45 272,-157.45 403,-157.45 403,-181.45"/>
+<text text-anchor="middle" x="337.5" y="-167.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_SupportRoutines</text>
+</a>
+</g>
+</g>
+<!-- module~self_lagrange_t&#45;&gt;module~self_supportroutines -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge42" class="edge">
+<title>module~self_lagrange_t&#45;&gt;module~self_supportroutines</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M446.23,-199.42C429.17,-194.67 409.41,-189.17 391.5,-184.19"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="392.35,-180.8 381.78,-181.49 390.47,-187.54 392.35,-180.8"/>
+</g>
+<!-- module~self_quadrature -->
+<g id="module~~self_tensor_2d~~UsesGraph_node18" class="node">
+<title>module~self_quadrature</title>
+<g id="a_module~~self_tensor_2d~~UsesGraph_node18"><a xlink:href=".././module/self_quadrature.html" xlink:title="SELF_Quadrature">
+<polygon fill="#337ab7" stroke="#337ab7" points="389.5,-223.45 285.5,-223.45 285.5,-199.45 389.5,-199.45 389.5,-223.45"/>
+<text text-anchor="middle" x="337.5" y="-209.05" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Quadrature</text>
+</a>
+</g>
+</g>
+<!-- module~self_lagrange_t&#45;&gt;module~self_quadrature -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge44" class="edge">
+<title>module~self_lagrange_t&#45;&gt;module~self_quadrature</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M438.8,-211.45C426.29,-211.45 412.76,-211.45 399.81,-211.45"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="399.58,-207.95 389.58,-211.45 399.58,-214.95 399.58,-207.95"/>
+</g>
+<!-- module~self_supportroutines&#45;&gt;iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge49" class="edge">
+<title>module~self_supportroutines&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M271.94,-169.51C244.79,-169.52 212.86,-169.51 184,-169.45"/>
+</g>
+<!-- module~self_supportroutines&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge50" class="edge">
+<title>module~self_supportroutines&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M293.47,-181.52C286.16,-184.12 278.75,-187.1 272,-190.45 248.46,-202.13 224.08,-219.51 206.97,-232.73"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="204.43,-230.28 198.73,-239.22 208.75,-235.79 204.43,-230.28"/>
+</g>
+<!-- module~self_quadrature&#45;&gt;iso_fortran_env -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge51" class="edge">
+<title>module~self_quadrature&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M297.06,-199.42C255.77,-187.02 195.36,-169.48 184,-169.45"/>
+</g>
+<!-- module~self_quadrature&#45;&gt;module~self_constants -->
+<g id="module~~self_tensor_2d~~UsesGraph_edge52" class="edge">
+<title>module~self_quadrature&#45;&gt;module~self_constants</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M290.74,-223.45C274.68,-227.67 256.46,-232.45 239.68,-236.85"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="238.77,-233.47 229.99,-239.39 240.55,-240.24 238.77,-233.47"/>
+</g>
+</g>
+</svg>
+</div><script>var panmoduleself_tensor_2dUsesGraph = svgPanZoom('#moduleself_tensor_2dUsesGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </li>
+      </ul>
+    </div>
+
+        <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+  <li class="list-group-item">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~self_tensor_2d~~UsedByGraph Pages: 1 -->
+<svg id="moduleself_tensor_2dUsedByGraph" width="641pt" height="159pt"
+ viewBox="0.00 0.00 641.00 159.03" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~self_tensor_2d~~UsedByGraph" class="graph" transform="scale(0.49 0.49) rotate(0) translate(4 322)">
+<title>module~~self_tensor_2d~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-322 1310,-322 1310,4 -4,4"/>
+<!-- module~self_tensor_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node1" class="node">
+<title>module~self_tensor_2d</title>
+<polygon fill="none" stroke="black" points="98,-150 0,-150 0,-126 98,-126 98,-150"/>
+<text text-anchor="middle" x="49" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50">SELF_Tensor_2D</text>
+</g>
+<!-- module~self_mappedscalar_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node2" class="node">
+<title>module~self_mappedscalar_2d_t</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node2"><a xlink:href=".././module/self_mappedscalar_2d_t.html" xlink:title="SELF_MappedScalar_2D_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="436,-110 287,-110 287,-86 436,-86 436,-110"/>
+<text text-anchor="middle" x="361.5" y="-95.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_MappedScalar_2D_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_mappedscalar_2d_t&#45;&gt;module~self_tensor_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge1" class="edge">
+<title>module~self_mappedscalar_2d_t&#45;&gt;module~self_tensor_2d</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M286.94,-101.16C242.45,-103.82 184.71,-108.59 134,-117 123.66,-118.71 112.72,-121.05 102.28,-123.55"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="101.32,-120.18 92.45,-125.97 103,-126.97 101.32,-120.18"/>
+</g>
+<!-- module~self_geometry_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node3" class="node">
+<title>module~self_geometry_2d</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node3"><a xlink:href=".././module/self_geometry_2d.html" xlink:title="SELF_Geometry_2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="251,-150 134,-150 134,-126 251,-126 251,-150"/>
+<text text-anchor="middle" x="192.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_Geometry_2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_mappedscalar_2d_t&#45;&gt;module~self_geometry_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge6" class="edge">
+<title>module~self_mappedscalar_2d_t&#45;&gt;module~self_geometry_2d</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M310.39,-110C292.56,-114.27 272.29,-119.13 253.7,-123.58"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="252.77,-120.2 243.86,-125.94 254.4,-127.01 252.77,-120.2"/>
+</g>
+<!-- module~self_geometry_2d&#45;&gt;module~self_tensor_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge2" class="edge">
+<title>module~self_geometry_2d&#45;&gt;module~self_tensor_2d</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M133.95,-138C125.46,-138 116.71,-138 108.21,-138"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="108,-134.5 98,-138 108,-141.5 108,-134.5"/>
+</g>
+<!-- module~self_mappedvector_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node4" class="node">
+<title>module~self_mappedvector_2d_t</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node4"><a xlink:href=".././module/self_mappedvector_2d_t.html" xlink:title="SELF_MappedVector_2D_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="436,-190 287,-190 287,-166 436,-166 436,-190"/>
+<text text-anchor="middle" x="361.5" y="-175.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_MappedVector_2D_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_mappedvector_2d_t&#45;&gt;module~self_tensor_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge3" class="edge">
+<title>module~self_mappedvector_2d_t&#45;&gt;module~self_tensor_2d</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M286.94,-174.84C242.45,-172.18 184.71,-167.41 134,-159 123.66,-157.29 112.72,-154.95 102.28,-152.45"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="103,-149.03 92.45,-150.03 101.32,-155.82 103,-149.03"/>
+</g>
+<!-- module~self_mappedvector_2d_t&#45;&gt;module~self_geometry_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge7" class="edge">
+<title>module~self_mappedvector_2d_t&#45;&gt;module~self_geometry_2d</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M310.39,-166C292.56,-161.73 272.29,-156.87 253.7,-152.42"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="254.4,-148.99 243.86,-150.06 252.77,-155.8 254.4,-148.99"/>
+</g>
+<!-- module~self_dgmodel2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node5" class="node">
+<title>module~self_dgmodel2d_t</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node5"><a xlink:href=".././module/self_dgmodel2d_t.html" xlink:title="SELF_DGModel2D_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="764,-150 648,-150 648,-126 764,-126 764,-150"/>
+<text text-anchor="middle" x="706" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_DGModel2D_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_dgmodel2d_t&#45;&gt;module~self_geometry_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge8" class="edge">
+<title>module~self_dgmodel2d_t&#45;&gt;module~self_geometry_2d</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M647.81,-138C552.8,-138 362.83,-138 261.25,-138"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="261.1,-134.5 251.1,-138 261.1,-141.5 261.1,-134.5"/>
+</g>
+<!-- module~self_mappedvector_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node6" class="node">
+<title>module~self_mappedvector_2d</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node6"><a xlink:href=".././module/self_mappedvector_2d.html" xlink:title="SELF_MappedVector_2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="612,-190 472,-190 472,-166 612,-166 612,-190"/>
+<text text-anchor="middle" x="542" y="-175.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_MappedVector_2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_dgmodel2d_t&#45;&gt;module~self_mappedvector_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge13" class="edge">
+<title>module~self_dgmodel2d_t&#45;&gt;module~self_mappedvector_2d</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M656.39,-150C639.17,-154.25 619.61,-159.08 601.64,-163.52"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="600.72,-160.14 591.85,-165.94 602.4,-166.94 600.72,-160.14"/>
+</g>
+<!-- module~self_mappedscalar_2d~2 -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node8" class="node">
+<title>module~self_mappedscalar_2d~2</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node8"><a xlink:href=".././module/self_mappedscalar_2d~2.html" xlink:title="SELF_MappedScalar_2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="612,-110 472,-110 472,-86 612,-86 612,-110"/>
+<text text-anchor="middle" x="542" y="-95.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_MappedScalar_2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_dgmodel2d_t&#45;&gt;module~self_mappedscalar_2d~2 -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge14" class="edge">
+<title>module~self_dgmodel2d_t&#45;&gt;module~self_mappedscalar_2d~2</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M656.39,-126C639.17,-121.75 619.61,-116.92 601.64,-112.48"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="602.4,-109.06 591.85,-110.06 600.72,-115.86 602.4,-109.06"/>
+</g>
+<!-- module~self_mappedvector_2d&#45;&gt;module~self_mappedvector_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge9" class="edge">
+<title>module~self_mappedvector_2d&#45;&gt;module~self_mappedvector_2d_t</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M471.99,-178C463.53,-178 454.81,-178 446.16,-178"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="446.06,-174.5 436.06,-178 446.06,-181.5 446.06,-174.5"/>
+</g>
+<!-- module~self_mappedvector_2d~2 -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node7" class="node">
+<title>module~self_mappedvector_2d~2</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node7"><a xlink:href=".././module/self_mappedvector_2d~2.html" xlink:title="SELF_MappedVector_2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="612,-232 472,-232 472,-208 612,-208 612,-232"/>
+<text text-anchor="middle" x="542" y="-217.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_MappedVector_2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_mappedvector_2d~2&#45;&gt;module~self_mappedvector_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge10" class="edge">
+<title>module~self_mappedvector_2d~2&#45;&gt;module~self_mappedvector_2d_t</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M489.85,-207.96C469.12,-203.09 445.02,-197.42 423.4,-192.33"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="424.19,-188.92 413.66,-190.04 422.59,-195.73 424.19,-188.92"/>
+</g>
+<!-- module~self_mappedscalar_2d~2&#45;&gt;module~self_mappedscalar_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge4" class="edge">
+<title>module~self_mappedscalar_2d~2&#45;&gt;module~self_mappedscalar_2d_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M471.99,-98C463.53,-98 454.81,-98 446.16,-98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="446.06,-94.5 436.06,-98 446.06,-101.5 446.06,-94.5"/>
+</g>
+<!-- module~self_mappedscalar_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node9" class="node">
+<title>module~self_mappedscalar_2d</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node9"><a xlink:href=".././module/self_mappedscalar_2d.html" xlink:title="SELF_MappedScalar_2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="612,-68 472,-68 472,-44 612,-44 612,-68"/>
+<text text-anchor="middle" x="542" y="-53.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_MappedScalar_2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_mappedscalar_2d&#45;&gt;module~self_mappedscalar_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge5" class="edge">
+<title>module~self_mappedscalar_2d&#45;&gt;module~self_mappedscalar_2d_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M489.85,-68.04C469.12,-72.91 445.02,-78.58 423.4,-83.67"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="422.59,-80.27 413.66,-85.96 424.19,-87.08 422.59,-80.27"/>
+</g>
+<!-- module~self_dgmodel2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node10" class="node">
+<title>module~self_dgmodel2d</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node10"><a xlink:href=".././module/self_dgmodel2d.html" xlink:title="SELF_DGModel2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="907,-171 800,-171 800,-147 907,-147 907,-171"/>
+<text text-anchor="middle" x="853.5" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_DGModel2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_dgmodel2d&#45;&gt;module~self_dgmodel2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge11" class="edge">
+<title>module~self_dgmodel2d&#45;&gt;module~self_dgmodel2d_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M799.97,-151.42C791.66,-150.22 782.97,-148.97 774.38,-147.73"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="774.77,-144.25 764.37,-146.28 773.77,-151.17 774.77,-144.25"/>
+</g>
+<!-- module~self_dgmodel2d~2 -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node11" class="node">
+<title>module~self_dgmodel2d~2</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node11"><a xlink:href=".././module/self_dgmodel2d~2.html" xlink:title="SELF_DGModel2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="907,-129 800,-129 800,-105 907,-105 907,-129"/>
+<text text-anchor="middle" x="853.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SELF_DGModel2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_dgmodel2d~2&#45;&gt;module~self_dgmodel2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge12" class="edge">
+<title>module~self_dgmodel2d~2&#45;&gt;module~self_dgmodel2d_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M799.97,-124.58C791.66,-125.78 782.97,-127.03 774.38,-128.27"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="773.77,-124.83 764.37,-129.72 774.77,-131.75 773.77,-124.83"/>
+</g>
+<!-- module~self_advection_diffusion_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node12" class="node">
+<title>module~self_advection_diffusion_2d_t</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node12"><a xlink:href=".././module/self_advection_diffusion_2d_t.html" xlink:title="self_advection_diffusion_2d_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="1111,-276 943,-276 943,-252 1111,-252 1111,-276"/>
+<text text-anchor="middle" x="1027" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_advection_diffusion_2d_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_advection_diffusion_2d_t&#45;&gt;module~self_dgmodel2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge15" class="edge">
+<title>module~self_advection_diffusion_2d_t&#45;&gt;module~self_dgmodel2d</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1006.33,-251.96C976.04,-233.41 917.85,-197.78 882.96,-176.43"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="884.56,-173.3 874.21,-171.07 880.91,-179.27 884.56,-173.3"/>
+</g>
+<!-- module~self_linearshallowwater2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node13" class="node">
+<title>module~self_linearshallowwater2d_t</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node13"><a xlink:href=".././module/self_linearshallowwater2d_t.html" xlink:title="self_LinearShallowWater2D_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="1110.5,-192 943.5,-192 943.5,-168 1110.5,-168 1110.5,-192"/>
+<text text-anchor="middle" x="1027" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_LinearShallowWater2D_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_linearshallowwater2d_t&#45;&gt;module~self_dgmodel2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge16" class="edge">
+<title>module~self_linearshallowwater2d_t&#45;&gt;module~self_dgmodel2d</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M943.26,-169.87C934.5,-168.8 925.68,-167.72 917.2,-166.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="917.38,-163.17 907.03,-165.43 916.53,-170.12 917.38,-163.17"/>
+</g>
+<!-- module~self_nulldgmodel2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node14" class="node">
+<title>module~self_nulldgmodel2d_t</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node14"><a xlink:href=".././module/self_nulldgmodel2d_t.html" xlink:title="self_NullDGModel2D_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="1092,-150 962,-150 962,-126 1092,-126 1092,-150"/>
+<text text-anchor="middle" x="1027" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_NullDGModel2D_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_nulldgmodel2d_t&#45;&gt;module~self_dgmodel2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge17" class="edge">
+<title>module~self_nulldgmodel2d_t&#45;&gt;module~self_dgmodel2d</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M961.65,-145.88C947.2,-147.65 931.87,-149.53 917.48,-151.29"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="916.68,-147.86 907.18,-152.55 917.53,-154.81 916.68,-147.86"/>
+</g>
+<!-- module~self_lineareuler2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node15" class="node">
+<title>module~self_lineareuler2d_t</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node15"><a xlink:href=".././module/self_lineareuler2d_t.html" xlink:title="self_LinearEuler2D_t">
+<polygon fill="#337ab7" stroke="#337ab7" points="1088,-66 966,-66 966,-42 1088,-42 1088,-66"/>
+<text text-anchor="middle" x="1027" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_LinearEuler2D_t</text>
+</a>
+</g>
+</g>
+<!-- module~self_lineareuler2d_t&#45;&gt;module~self_dgmodel2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge18" class="edge">
+<title>module~self_lineareuler2d_t&#45;&gt;module~self_dgmodel2d</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1011.34,-66.07C989.58,-83.57 947,-116.27 907,-138 903.93,-139.67 900.7,-141.28 897.41,-142.81"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="895.82,-139.69 888.09,-146.93 898.65,-146.09 895.82,-139.69"/>
+</g>
+<!-- module~self_linearshallowwater2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node16" class="node">
+<title>module~self_linearshallowwater2d</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node16"><a xlink:href=".././module/self_linearshallowwater2d.html" xlink:title="self_LinearShallowWater2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="1305.5,-234 1147.5,-234 1147.5,-210 1305.5,-210 1305.5,-234"/>
+<text text-anchor="middle" x="1226.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_LinearShallowWater2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_linearshallowwater2d&#45;&gt;module~self_linearshallowwater2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge21" class="edge">
+<title>module~self_linearshallowwater2d&#45;&gt;module~self_linearshallowwater2d_t</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M1168.9,-209.96C1145.66,-205.02 1118.58,-199.26 1094.41,-194.12"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="1095.11,-190.69 1084.6,-192.04 1093.66,-197.54 1095.11,-190.69"/>
+</g>
+<!-- module~self_linearshallowwater2d~2 -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node17" class="node">
+<title>module~self_linearshallowwater2d~2</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node17"><a xlink:href=".././module/self_linearshallowwater2d~2.html" xlink:title="self_LinearShallowWater2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="1305.5,-192 1147.5,-192 1147.5,-168 1305.5,-168 1305.5,-192"/>
+<text text-anchor="middle" x="1226.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_LinearShallowWater2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_linearshallowwater2d~2&#45;&gt;module~self_linearshallowwater2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge22" class="edge">
+<title>module~self_linearshallowwater2d~2&#45;&gt;module~self_linearshallowwater2d_t</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M1147.44,-180C1138.67,-180 1129.67,-180 1120.73,-180"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="1120.68,-176.5 1110.68,-180 1120.68,-183.5 1120.68,-176.5"/>
+</g>
+<!-- module~self_nulldgmodel2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node18" class="node">
+<title>module~self_nulldgmodel2d</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node18"><a xlink:href=".././module/self_nulldgmodel2d.html" xlink:title="self_NullDGModel2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="1287,-150 1166,-150 1166,-126 1287,-126 1287,-150"/>
+<text text-anchor="middle" x="1226.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_NullDGModel2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_nulldgmodel2d&#45;&gt;module~self_nulldgmodel2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge23" class="edge">
+<title>module~self_nulldgmodel2d&#45;&gt;module~self_nulldgmodel2d_t</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M1165.98,-138C1145.97,-138 1123.39,-138 1102.38,-138"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="1102.22,-134.5 1092.22,-138 1102.22,-141.5 1102.22,-134.5"/>
+</g>
+<!-- module~self_lineareuler2d~2 -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node19" class="node">
+<title>module~self_lineareuler2d~2</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node19"><a xlink:href=".././module/self_lineareuler2d~2.html" xlink:title="self_LinearEuler2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="1283,-66 1170,-66 1170,-42 1283,-42 1283,-66"/>
+<text text-anchor="middle" x="1226.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_LinearEuler2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_lineareuler2d~2&#45;&gt;module~self_lineareuler2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge26" class="edge">
+<title>module~self_lineareuler2d~2&#45;&gt;module~self_lineareuler2d_t</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M1169.96,-54C1147.8,-54 1122.02,-54 1098.55,-54"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="1098.31,-50.5 1088.31,-54 1098.31,-57.5 1098.31,-50.5"/>
+</g>
+<!-- module~self_advection_diffusion_2d~2 -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node20" class="node">
+<title>module~self_advection_diffusion_2d~2</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node20"><a xlink:href=".././module/self_advection_diffusion_2d~2.html" xlink:title="self_advection_diffusion_2d">
+<polygon fill="#337ab7" stroke="#337ab7" points="1306,-318 1147,-318 1147,-294 1306,-294 1306,-318"/>
+<text text-anchor="middle" x="1226.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_advection_diffusion_2d</text>
+</a>
+</g>
+</g>
+<!-- module~self_advection_diffusion_2d~2&#45;&gt;module~self_advection_diffusion_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge19" class="edge">
+<title>module~self_advection_diffusion_2d~2&#45;&gt;module~self_advection_diffusion_2d_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1168.9,-293.96C1145.66,-289.02 1118.58,-283.26 1094.41,-278.12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1095.11,-274.69 1084.6,-276.04 1093.66,-281.54 1095.11,-274.69"/>
+</g>
+<!-- module~self_advection_diffusion_2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node21" class="node">
+<title>module~self_advection_diffusion_2d</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node21"><a xlink:href=".././module/self_advection_diffusion_2d.html" xlink:title="self_advection_diffusion_2d">
+<polygon fill="#337ab7" stroke="#337ab7" points="1306,-276 1147,-276 1147,-252 1306,-252 1306,-276"/>
+<text text-anchor="middle" x="1226.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_advection_diffusion_2d</text>
+</a>
+</g>
+</g>
+<!-- module~self_advection_diffusion_2d&#45;&gt;module~self_advection_diffusion_2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge20" class="edge">
+<title>module~self_advection_diffusion_2d&#45;&gt;module~self_advection_diffusion_2d_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M1146.88,-264C1138.45,-264 1129.82,-264 1121.24,-264"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1121.21,-260.5 1111.21,-264 1121.21,-267.5 1121.21,-260.5"/>
+</g>
+<!-- module~self_nulldgmodel2d~2 -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node22" class="node">
+<title>module~self_nulldgmodel2d~2</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node22"><a xlink:href=".././module/self_nulldgmodel2d~2.html" xlink:title="self_NullDGModel2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="1287,-108 1166,-108 1166,-84 1287,-84 1287,-108"/>
+<text text-anchor="middle" x="1226.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_NullDGModel2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_nulldgmodel2d~2&#45;&gt;module~self_nulldgmodel2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge24" class="edge">
+<title>module~self_nulldgmodel2d~2&#45;&gt;module~self_nulldgmodel2d_t</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M1168.9,-108.04C1145.66,-112.98 1118.58,-118.74 1094.41,-123.88"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="1093.66,-120.46 1084.6,-125.96 1095.11,-127.31 1093.66,-120.46"/>
+</g>
+<!-- module~self_lineareuler2d -->
+<g id="module~~self_tensor_2d~~UsedByGraph_node23" class="node">
+<title>module~self_lineareuler2d</title>
+<g id="a_module~~self_tensor_2d~~UsedByGraph_node23"><a xlink:href=".././module/self_lineareuler2d.html" xlink:title="self_LinearEuler2D">
+<polygon fill="#337ab7" stroke="#337ab7" points="1283,-24 1170,-24 1170,0 1283,0 1283,-24"/>
+<text text-anchor="middle" x="1226.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_LinearEuler2D</text>
+</a>
+</g>
+</g>
+<!-- module~self_lineareuler2d&#45;&gt;module~self_lineareuler2d_t -->
+<g id="module~~self_tensor_2d~~UsedByGraph_edge25" class="edge">
+<title>module~self_lineareuler2d&#45;&gt;module~self_lineareuler2d_t</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M1169.96,-23.81C1146.49,-28.8 1118.98,-34.65 1094.44,-39.87"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="1093.55,-36.48 1084.49,-41.99 1095,-43.33 1093.55,-36.48"/>
+</g>
+</g>
+</svg>
+</div><script>var panmoduleself_tensor_2dUsedByGraph = svgPanZoom('#moduleself_tensor_2dUsedByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+  </li>
+      </ul>
+    </div>
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/self_tensor_2d.html#type-tensor2d">Tensor2D</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      <a class="list-group-item" href="../module/self_tensor_2d.html#proc-free_tensor2d">Free_Tensor2D</a>
+      <a class="list-group-item" href="../module/self_tensor_2d.html#proc-init_tensor2d">Init_Tensor2D</a>
+      <a class="list-group-item" href="../module/self_tensor_2d.html#proc-updatedevice_tensor2d">UpdateDevice_Tensor2D</a>
+      <a class="list-group-item" href="../module/self_tensor_2d.html#proc-updatehost_tensor2d">UpdateHost_Tensor2D</a>
+    </div>
+  </div>
+</div>
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+
+    
+    
+
+    
+    <section>
+     <h2>Derived Types</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-tensor2d"></span><h3>type, public, extends(<a href='../type/tensor2d_t.html'>Tensor2D_t</a>) :: <a href='../type/tensor2d.html'>Tensor2D</a>  </h3></div>
+  <div class="panel-body">
+     <h4>Components</h4>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-m~2"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>M</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-n~2"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>N</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-backend~7"></span>character(len=3),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>backend</strong></td><td> =</td><td>"gpu"</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-blas_handle~7"></span>type(c_ptr),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>blas_handle</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-boundary~7"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:,:,:,:,:,:)</td><td>::</td>
+  <td><strong>boundary</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-boundary_gpu~6"></span>type(c_ptr),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>boundary_gpu</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-eqn"></span>type(EquationParser),</td>
+<td>public,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>eqn</strong>(:)</td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-extboundary~7"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:,:,:,:,:,:)</td><td>::</td>
+  <td><strong>extBoundary</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-extboundary_gpu~6"></span>type(c_ptr),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>extBoundary_gpu</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-interior~7"></span>real(kind=prec),</td>
+<td>public,</td>  <td>pointer, contiguous, dimension(:,:,:,:,:,:)</td><td>::</td>
+  <td><strong>interior</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-interior_gpu~6"></span>type(c_ptr),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>interior_gpu</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-interp"></span>type(<a href='../type/lagrange.html'>Lagrange</a>),</td>
+<td>public,</td>  <td>pointer</td><td>::</td>
+  <td><strong>interp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-meta"></span>type(<a href='../type/metadata.html'>Metadata</a>),</td>
+<td>public,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>meta</strong>(:)</td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nelem"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>nElem</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nvar"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>nVar</strong></td><td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
+
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+       <tr><td>procedure, public :: <strong><a href='../type/tensor2d_t.html#boundprocedure-boundaryinterp~9'>BoundaryInterp</a></strong>  => BoundaryInterp_Tensor2D_t </td>
+       <td></td></tr>
+       <tr><td>generic, public :: <strong><a href='../type/tensor2d.html#boundprocedure-determinant~3'>Determinant</a></strong>  => Determinant_Tensor2D_t </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/tensor2d.html#boundprocedure-free~30'>Free</a></strong>  => Free_Tensor2D </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/tensor2d.html#boundprocedure-init~30'>Init</a></strong>  => Init_Tensor2D </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/self_dataobj.html#boundprocedure-setdescription'>SetDescription</a></strong>  => SetDescription_DataObj </td>
+       <td></td></tr>
+       <tr><td>generic, public :: <strong><a href='../type/tensor2d.html#boundprocedure-setequation~22'>SetEquation</a></strong>  => SetEquation_DataObj </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/self_dataobj.html#boundprocedure-setname'>SetName</a></strong>  => SetName_DataObj </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/self_dataobj.html#boundprocedure-setunits'>SetUnits</a></strong>  => SetUnits_DataObj </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/tensor2d.html#boundprocedure-updatedevice~17'>UpdateDevice</a></strong>  => UpdateDevice_Tensor2D </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/tensor2d.html#boundprocedure-updatehost~13'>UpdateHost</a></strong>  => UpdateHost_Tensor2D </td>
+       <td></td></tr>
+       </tbody>
+       </table>
+  </div>
+</div>
+
+    </section>
+  <br>
+    
+
+    <section>
+    <h2>Subroutines</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-free_tensor2d"></span><h3>public subroutine <a href='../proc/free_tensor2d.html'>Free_Tensor2D</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tensor2d.html'>Tensor2D</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-init_tensor2d"></span><h3>public subroutine <a href='../proc/init_tensor2d.html'>Init_Tensor2D</a>(this, interp, nVar, nElem)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tensor2d.html'>Tensor2D</a>),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/lagrange.html'>Lagrange</a>),</td>
+<td>intent(in),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>interp</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>nVar</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>nElem</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-updatedevice_tensor2d"></span><h3>public subroutine <a href='../proc/updatedevice_tensor2d.html'>UpdateDevice_Tensor2D</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tensor2d.html'>Tensor2D</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-updatehost_tensor2d"></span><h3>public subroutine <a href='../proc/updatehost_tensor2d.html'>UpdateHost_Tensor2D</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tensor2d.html'>Tensor2D</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+    </section>    
+    <br>
+    
+    </div>
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SELF was developed by Fluid Numerics<br>&copy; 2025 3-Clause BSD with attribution
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-01-30 19:14            </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>
